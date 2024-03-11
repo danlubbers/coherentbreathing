@@ -15,19 +15,26 @@
   </head>
   <body>
     <div id="app">
-      <figure class="sphere" data-state="stop">
-        <figcaption class="caption" />
-      </figure>
+      <h1 class="title">Coherent Breathing</h1>
+      <div class="sphere-container">
+        <figure class="sphere" data-state="stop">
+          <figcaption class="caption" />
+        </figure>
+      </div>
     </div>
   </body>
 
   <script>
     document.body.addEventListener("touchstart", () => {
       const sphere = document.querySelector(".sphere");
+      const title = document.querySelector(".title");
+      console.log("title", title);
       console.log("sphere.dataset.state", sphere.dataset.state);
       if (sphere.dataset.state === "stop") {
+        title.setAttribute("style", "visibility: hidden");
         sphere.dataset.state = "play";
       } else {
+        title.setAttribute("style", "visibility: visible");
         sphere.dataset.state = "stop";
       }
     });
