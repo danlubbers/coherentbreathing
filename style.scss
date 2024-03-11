@@ -1,7 +1,11 @@
 @import "/styles/base.css";
 
 :root {
-  background-color: #333;
+  --foreground-color: #eee;
+  --background-color: #222;
+  --sphere-foreground: #13eb86;
+  --sphere-background: #1693e6;
+  background-color: var(--background-color);
 }
 
 #app {
@@ -16,10 +20,23 @@
   width: 10rem;
   height: 10rem;
   border-radius: 50%;
-  background: radial-gradient(circle, #13eb86, #1693e6);
+  background: radial-gradient(
+    circle,
+    var(--sphere-foreground),
+    var(--sphere-background)
+  );
   animation-name: breath;
   animation-duration: 11s;
   animation-iteration-count: infinite;
+
+  > .caption {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    color: var(--foreground-color);
+  }
 }
 
 @keyframes breath {
