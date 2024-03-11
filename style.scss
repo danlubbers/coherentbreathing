@@ -25,6 +25,9 @@
     var(--sphere-foreground),
     var(--sphere-background)
   );
+  &[data-state="stop"] {
+    animation-play-state: paused;
+  }
   &[data-state="play"] {
     animation-name: breath;
     animation-duration: 11s;
@@ -47,6 +50,7 @@
       animation-duration: 11s;
       animation-iteration-count: infinite;
       // animation-fill-mode: both;
+      transition: all;
       animation-timing-function: ease-in-out;
     }
   }
@@ -65,10 +69,29 @@
 
 @keyframes sphere-caption {
   0% {
+    opacity: 0.1;
     content: "inhale";
   }
 
+  10%,
+  40% {
+    opacity: 1;
+  }
+
+  49%,
+  50% {
+    opacity: 0;
+  }
+
+  55% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+
   100% {
+    opacity: 0.1;
     content: "exhale";
   }
 }

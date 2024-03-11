@@ -15,7 +15,7 @@
   </head>
   <body>
     <div id="app">
-      <figure class="sphere">
+      <figure class="sphere" data-state="stop">
         <figcaption class="caption" />
       </figure>
     </div>
@@ -24,8 +24,12 @@
   <script>
     document.body.addEventListener("touchstart", () => {
       const sphere = document.querySelector(".sphere");
-      sphere.dataset.state = "play";
-      console.log("hit");
+      console.log("sphere.dataset.state", sphere.dataset.state);
+      if (sphere.dataset.state === "stop") {
+        sphere.dataset.state = "play";
+      } else {
+        sphere.dataset.state = "stop";
+      }
     });
   </script>
 </html>
