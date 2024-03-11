@@ -25,28 +25,30 @@
     var(--sphere-foreground),
     var(--sphere-background)
   );
-  animation-name: breath;
-  animation-duration: 11s;
-  animation-iteration-count: infinite;
-  // animation-fill-mode: both;
-  animation-timing-function: ease-in-out;
-
-  > .caption {
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 2rem;
-    color: var(--foreground-color);
-  }
-
-  > .caption::before {
-    content: "";
-    animation: sphere-caption;
+  &[data-state="play"] {
+    animation-name: breath;
     animation-duration: 11s;
     animation-iteration-count: infinite;
     // animation-fill-mode: both;
     animation-timing-function: ease-in-out;
+
+    > .caption {
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 2rem;
+      color: var(--foreground-color);
+    }
+
+    > .caption::before {
+      content: "";
+      animation: sphere-caption;
+      animation-duration: 11s;
+      animation-iteration-count: infinite;
+      // animation-fill-mode: both;
+      animation-timing-function: ease-in-out;
+    }
   }
 }
 

@@ -23,6 +23,8 @@
 
   <script>
     document.body.addEventListener("touchstart", () => {
+      const sphere = document.querySelector(".sphere");
+      sphere.dataset.state = "play";
       console.log("hit");
     });
   </script>
