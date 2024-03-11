@@ -28,6 +28,8 @@
   animation-name: breath;
   animation-duration: 11s;
   animation-iteration-count: infinite;
+  // animation-fill-mode: both;
+  animation-timing-function: ease-in-out;
 
   > .caption {
     height: 100%;
@@ -36,6 +38,15 @@
     align-items: center;
     font-size: 2rem;
     color: var(--foreground-color);
+  }
+
+  > .caption::before {
+    content: "";
+    animation: sphere-caption;
+    animation-duration: 11s;
+    animation-iteration-count: infinite;
+    // animation-fill-mode: both;
+    animation-timing-function: ease-in-out;
   }
 }
 
@@ -47,5 +58,15 @@
 
   50% {
     transform: scale(2);
+  }
+}
+
+@keyframes sphere-caption {
+  0% {
+    content: "inhale";
+  }
+
+  100% {
+    content: "exhale";
   }
 }
