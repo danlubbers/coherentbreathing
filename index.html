@@ -54,13 +54,14 @@
           <figcaption class="caption" />
         </figure>
         <!-- link to test | swap for a better sound to match 5.5s in and out -->
-        <!-- <audio
+        <audio
+          loop
           id="gong"
-          src="https://archive.org/download/meditationgong/meditation%20gong.mp3"
+          src="https://s3.amazonaws.com/content.danlubbers.com/audio/coherent_breathing_tones.mp3"
           preload="auto"
         >
           Your browser does not support the <code>audio</code> element.
-        </audio> -->
+        </audio>
       </div>
     </div>
   </body>
@@ -70,7 +71,7 @@
     const sphereContainer = document.querySelector(".sphere-container");
     const sphere = document.querySelector(".sphere");
     const caption = document.querySelector(".caption");
-    // const gong = document.querySelector("#gong");
+    const gong = document.querySelector("#gong");
 
     sphere.addEventListener("click", () => {
       console.log("sphere.dataset.state", sphere.dataset.state);
@@ -79,13 +80,13 @@
         sphere.dataset.state = "play";
         sphere.style.animationPlayState = "running";
         caption.style.setProperty("--animation", "running");
-        // gong.play();
+        gong.play();
       } else {
         title.setAttribute("style", "visibility: visible");
         sphere.dataset.state = "stop";
         sphere.style.animationPlayState = "paused";
         caption.style.setProperty("--animation", "paused");
-        // gong.pause();
+        gong.pause();
         // gong.currentTime = 0; // reset audio to beginning
       }
     });
