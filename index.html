@@ -13,6 +13,21 @@
     />
     <link rel="stylesheet" href="style.scss" />
   </head>
+  <!-- Google tag (gtag.js) -->
+  <script
+    async
+    src="https://www.googletagmanager.com/gtag/js?id=G-R3FBYYGQXX"
+  ></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag("js", new Date());
+
+    gtag("config", "G-R3FBYYGQXX");
+  </script>
+
   <body>
     <div id="app">
       <h1 class="title">Coherent Breathing</h1>
@@ -49,6 +64,7 @@
         // janky stop animation. resets. should stop where it is in the frame
         sphere.dataset.state = "stop";
         gong.pause();
+        gong.currentTime = 0; // reset audio to beginning
       }
     });
   </script>
