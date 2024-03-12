@@ -1,10 +1,15 @@
 @import "/styles/base.css";
 
 :root {
+  // color variables
   --foreground-color: #eee;
   --background-color: #222;
   --sphere-foreground: #13eb86;
   --sphere-background: #1693e6;
+
+  // other variables
+  --animation: paused;
+
   background-color: var(--background-color);
 }
 
@@ -16,13 +21,12 @@
   justify-content: center;
 }
 
-// MODAL
-
 // TITLE
 .app-title {
   color: var(--foreground-color);
 }
 
+// MODAL
 .modal {
   position: absolute;
   width: 100%;
@@ -82,34 +86,32 @@
       var(--sphere-foreground),
       var(--sphere-background)
     );
-    &[data-state="stop"] {
-      animation-play-state: paused;
+
+    animation-name: breath;
+    animation-duration: 11s;
+    animation-iteration-count: infinite;
+    // animation-fill-mode: both;
+    animation-timing-function: ease-in-out;
+    animation-play-state: var(--animation);
+
+    > .caption {
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 2rem;
+      color: var(--foreground-color);
     }
-    &[data-state="play"] {
-      animation-name: breath;
+
+    > .caption::before {
+      content: "";
+      animation: sphere-caption;
       animation-duration: 11s;
       animation-iteration-count: infinite;
       // animation-fill-mode: both;
+      transition: all;
       animation-timing-function: ease-in-out;
-
-      > .caption {
-        height: 100%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        font-size: 2rem;
-        color: var(--foreground-color);
-      }
-
-      > .caption::before {
-        content: "";
-        animation: sphere-caption;
-        animation-duration: 11s;
-        animation-iteration-count: infinite;
-        // animation-fill-mode: both;
-        transition: all;
-        animation-timing-function: ease-in-out;
-      }
+      animation-play-state: var(--animation);
     }
   }
   .sphere:hover {
@@ -131,7 +133,7 @@
 
 @keyframes sphere-caption {
   0% {
-    opacity: 0.1;
+    opacity: 0;
     content: "inhale";
   }
 
