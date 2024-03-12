@@ -30,41 +30,59 @@
 
   <body>
     <div id="app">
-      <h1 class="title">Coherent Breathing</h1>
+      <!-- <div id="modal" class="modal">
+        <div class="modal-content">
+          <h1 class="'modal-logo">logo</h1>
+          <p class="modal-description">
+            Coherent breathing, also known as resonant breathing, is a type of
+            breathing that involves taking five to six breaths per minute, which
+            results in 5.5 second inhales and exhales. Each breath should feel
+            like a circle.
+          </p>
+          <p>
+            Coherent breathing can help to calm the body by affecting the
+            autonomic nervous system (ANS). It can also affect the phrenic
+            nerve, which improves blood circulation, and the amygdala, a part of
+            the brain that regulates emotions, fear, and
+          </p>
+          <button class="modal-btn">close</button>
+        </div>
+      </div> -->
+      <h1 class="app-title">Coherent Breathing</h1>
       <div class="sphere-container">
         <figure class="sphere" data-state="stop">
           <figcaption class="caption" />
         </figure>
         <!-- link to test | swap for a better sound to match 5.5s in and out -->
-        <audio
+        <!-- <audio
           id="gong"
           src="https://archive.org/download/meditationgong/meditation%20gong.mp3"
           preload="auto"
         >
           Your browser does not support the <code>audio</code> element.
-        </audio>
+        </audio> -->
       </div>
     </div>
   </body>
 
   <script>
-    const title = document.querySelector(".title");
+    const title = document.querySelector(".app-title");
     const sphereContainer = document.querySelector(".sphere-container");
     const sphere = document.querySelector(".sphere");
-    const gong = document.querySelector("#gong");
+    // const gong = document.querySelector("#gong");
 
     sphere.addEventListener("click", () => {
       console.log("sphere.dataset.state", sphere.dataset.state);
       if (sphere.dataset.state === "stop") {
         title.setAttribute("style", "visibility: hidden");
         sphere.dataset.state = "play";
-        gong.play();
+        // gong.play();
       } else {
         title.setAttribute("style", "visibility: visible");
         // janky stop animation. resets. should stop where it is in the frame
         sphere.dataset.state = "stop";
-        gong.pause();
-        gong.currentTime = 0; // reset audio to beginning
+        // gong.pause();
+        // gong.currentTime = 0; // reset audio to beginning
       }
     });
   </script>
