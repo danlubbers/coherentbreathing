@@ -5,7 +5,6 @@ const caption = document.querySelector(".caption");
 const gong = document.querySelector("#gong");
 
 sphere.addEventListener("click", () => {
-  console.log("sphere.dataset.state", sphere.dataset.state);
   if (sphere.dataset.state === "stop") {
     title.setAttribute("style", "visibility: hidden");
     sphere.dataset.state = "play";
