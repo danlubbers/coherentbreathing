@@ -40,7 +40,7 @@ button {
   appearance: none;
 }
 
-// reduce or no-preference
+/* reduce or no-preference */
 @media (prefers-reduced-motion: reduce) {
   * {
     animation-duration: 0s !important;
