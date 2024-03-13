@@ -4,7 +4,7 @@
   "description": "Coherent Breathing also known as resonant breathing is a type of breathing that involves taking five to six breaths per minute soothing the nervous system into a parasympathetic state for relaxation",
   "icons": [
     {
-      "src": "coherent_breathing_logo-192.png",
+      "src": "assets/coherent_breathing_logo-192.png",
       "sizes": "192x192",
       "type": "image/png"
     }
