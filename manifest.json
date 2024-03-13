@@ -6,6 +6,7 @@
   "display": "standalone",
   "theme_color": "#eee",
   "background_color": "#222",
+  "icon": "assets/coherent_breathing_logo-512.png",
   "icons": [
     {
       "src": "assets/coherent_breathing_logo-144.png",
