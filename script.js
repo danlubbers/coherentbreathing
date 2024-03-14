@@ -1,5 +1,10 @@
 if ("serviceWorker" in navigator) {
-  navigator.serviceWorker.register("/path/to/service-worker.js");
+  window.addEventListener("load", function () {
+    navigator.serviceWorker
+      .register("/service-worker.js")
+      .then((res) => console.log("service worker registered"))
+      .catch((err) => console.log("service worker not registered", err));
+  });
 }
 
 const title = document.querySelector(".app-title");
