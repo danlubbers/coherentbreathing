@@ -1,3 +1,7 @@
+if ("serviceWorker" in navigator) {
+  navigator.serviceWorker.register("/path/to/service-worker.js");
+}
+
 const title = document.querySelector(".app-title");
 const sphereContainer = document.querySelector(".sphere-container");
 const sphere = document.querySelector(".sphere");
