@@ -7,9 +7,9 @@ self.addEventListener("install", function (event) {
         "base.css",
         "style.scss",
         "script.js",
-        "/logos/icon-144x144.png",
-        "/logos/icon-192x192.png",
-        "/logos/icon-512x512.png",
+        "/assets/icon-144x144.png",
+        "/assets/icon-192x192.png",
+        "/assets/icon-512x512.png",
       ]);
     })
   );
