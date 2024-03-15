@@ -7,6 +7,8 @@
 
   // other variables
   --animation: paused;
+  --animation-name: "";
+
   background-color: var(--background-color);
 }
 
@@ -85,12 +87,12 @@
       var(--sphere-background)
     );
 
-    animation-name: breath;
-    animation-duration: 11s;
-    animation-iteration-count: infinite;
-    // animation-fill-mode: both;
-    animation-timing-function: ease-in-out;
-    animation-play-state: var(--animation);
+    // executed in script.js
+    // animation-name: breath;
+    // animation-duration: 11s;
+    // animation-iteration-count: infinite;
+    // animation-timing-function: ease-in-out;
+    // animation-play-state: var(--animation);
 
     > .caption {
       height: 100%;
@@ -101,12 +103,12 @@
       color: var(--foreground-color);
     }
 
+    // pseudo-element animations are tricky
     > .caption::before {
       content: "";
-      animation: sphere-caption;
+      animation: var(--animation-name);
       animation-duration: 11s;
       animation-iteration-count: infinite;
-      // animation-fill-mode: both;
       transition: all;
       animation-timing-function: ease-in-out;
       animation-play-state: var(--animation);

@@ -20,10 +20,11 @@ sphere.addEventListener("click", () => {
     title.setAttribute("style", "visibility: hidden");
     btnContainer.setAttribute("style", "visibility: hidden");
     sphere.dataset.state = "play";
-    sphere.style.animationPlayState = "running";
+    sphere.style.animation = "breath 11s infinite ease-in-out running";
+    caption.style.setProperty("--animation-name", "sphere-caption");
     caption.style.setProperty("--animation", "running");
     gong.play();
-  } else {
+  } else if (sphere.dataset.state === "play") {
     title.setAttribute("style", "visibility: visible");
     btnContainer.setAttribute("style", "visibility: visible");
     sphere.dataset.state = "stop";
@@ -35,7 +36,8 @@ sphere.addEventListener("click", () => {
 
 // broken
 resetBtn.addEventListener("click", () => {
-  sphere.style.animation = "paused";
+  sphere.style.animation = "paused"; // resets animation
+  caption.style.setProperty("--animation-name", "paused"); // resets pseud-element animation
 
   gong.pause();
   gong.currentTime = 0; // reset audio to beginning
