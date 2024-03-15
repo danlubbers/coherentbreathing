@@ -10,6 +10,7 @@ self.addEventListener("install", function (event) {
         "/assets/icon-144x144.png",
         "/assets/icon-192x192.png",
         "/assets/icon-512x512.png",
+        "https://s3.amazonaws.com/content.danlubbers.com/audio/coherent_breathing_45min.mp3",
       ]);
     })
   );
