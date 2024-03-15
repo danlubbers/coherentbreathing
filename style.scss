@@ -61,7 +61,12 @@
         top: 2px;
         right: 48px;
         border-radius: 50%;
-        background-color: var(--sphere-foreground);
+        backdrop-filter: blur(10px);
+        background: radial-gradient(
+          circle,
+          var(--sphere-foreground),
+          var(--sphere-background)
+        );
         box-shadow: 2px 0px 0px rgba(0, 0, 0, 0.15);
       }
       label {
@@ -84,7 +89,7 @@
       }
       input:checked + label:after {
         right: 2px;
-        background-color: var(--nightmode-background-color);
+        background: var(--nightmode-background-color);
         box-shadow: -2px 0px 0px rgba(0, 0, 0, 0.1);
       }
     }
