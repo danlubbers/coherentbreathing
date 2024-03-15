@@ -26,10 +26,69 @@
   font-family: "Montserrat", sans-serif;
 }
 
-// TITLE
-.app-title {
-  font-size: 1.6rem;
-  color: var(--foreground-color);
+.header-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  // TITLE
+  .app-title {
+    margin-bottom: 0;
+    font-size: 1.6rem;
+    color: var(--foreground-color);
+  }
+
+  // toggle | normal and night modes
+  section {
+    .toggle-container {
+      label {
+        display: inline-block;
+        position: relative;
+        height: 44px;
+        width: 90px;
+        background-color: var(--foreground-color);
+        cursor: pointer;
+        font-size: 0;
+        color: transparent;
+        border-radius: 22px;
+      }
+      label:after {
+        content: "";
+        display: block;
+        height: 40px;
+        width: 40px;
+        position: absolute;
+        top: 2px;
+        right: 48px;
+        border-radius: 50%;
+        background-color: var(--sphere-foreground);
+        box-shadow: 2px 0px 0px rgba(0, 0, 0, 0.15);
+      }
+      label {
+        transition: background-color 500ms ease;
+        &:after {
+          transition: right 500ms ease, background-color 500ms ease,
+            box-shadow 500ms ease;
+        }
+      }
+      input {
+        position: absolute !important;
+        width: 1px;
+        height: 1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        bottom: 0;
+      }
+      input:checked + label {
+        background: var(--nightmode-sphere-background);
+      }
+      input:checked + label:after {
+        right: 2px;
+        background-color: var(--nightmode-background-color);
+        box-shadow: -2px 0px 0px rgba(0, 0, 0, 0.1);
+      }
+    }
+  }
 }
 
 // MODAL
