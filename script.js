@@ -7,7 +7,7 @@ if ("service-worker" in navigator) {
   });
 }
 
-const title = document.querySelector(".app-title");
+const headerContainer = document.querySelector(".header-container");
 const sphereContainer = document.querySelector(".sphere-container");
 const sphere = document.querySelector(".sphere");
 const caption = document.querySelector(".caption");
@@ -17,7 +17,7 @@ const resetBtn = document.querySelector(".reset-btn");
 
 sphere.addEventListener("click", () => {
   if (sphere.dataset.state === "stop") {
-    title.setAttribute("style", "visibility: hidden");
+    headerContainer.setAttribute("style", "visibility: hidden");
     btnContainer.setAttribute("style", "visibility: hidden");
     sphere.dataset.state = "play";
     sphere.style.animation = "breath 11s infinite ease-in-out running";
@@ -25,7 +25,7 @@ sphere.addEventListener("click", () => {
     caption.style.setProperty("--animation", "running");
     gong.play();
   } else if (sphere.dataset.state === "play") {
-    title.setAttribute("style", "visibility: visible");
+    headerContainer.setAttribute("style", "visibility: visible");
     btnContainer.setAttribute("style", "visibility: visible");
     sphere.dataset.state = "stop";
     sphere.style.animationPlayState = "paused";
