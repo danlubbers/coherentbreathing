@@ -41,6 +41,22 @@
   // toggle | normal and night modes
   section {
     .toggle-container {
+      input {
+        position: absolute !important;
+        width: 1px;
+        height: 1px;
+        overflow: hidden;
+        // clip: rect(0, 0, 0, 0);
+        // bottom: 0;
+      }
+      input:checked + label {
+        background: var(--nightmode-sphere-background);
+      }
+      input:checked + label:after {
+        right: 2px;
+        background: var(--nightmode-background-color);
+        box-shadow: -2px 0px 0px rgba(0, 0, 0, 0.1);
+      }
       label {
         display: inline-block;
         position: relative;
@@ -75,22 +91,6 @@
           transition: right 500ms ease, background-color 500ms ease,
             box-shadow 500ms ease;
         }
-      }
-      input {
-        position: absolute !important;
-        width: 1px;
-        height: 1px;
-        overflow: hidden;
-        clip: rect(0, 0, 0, 0);
-        bottom: 0;
-      }
-      input:checked + label {
-        background: var(--nightmode-sphere-background);
-      }
-      input:checked + label:after {
-        right: 2px;
-        background: var(--nightmode-background-color);
-        box-shadow: -2px 0px 0px rgba(0, 0, 0, 0.1);
       }
     }
   }
