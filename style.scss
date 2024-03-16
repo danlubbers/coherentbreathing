@@ -54,12 +54,13 @@
         clip: rect(0, 0, 0, 0);
         bottom: 0;
       }
-      .toggle-input:checked + .toggle-label {
-        background: var(--nightmode-sphere-background);
-      }
       .toggle-input:checked + .toggle-label:after {
         right: 2px;
-        background: var(--nightmode-background-color);
+        background: radial-gradient(
+          circle,
+          var(--nightmode-sphere-foreground),
+          var(--nightmode-sphere-background)
+        );
       }
       .toggle-label {
         display: inline-block;
