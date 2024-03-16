@@ -36,8 +36,8 @@ toggleInput.addEventListener("click", () => {
   // Night Color Theme
   const nightmodeForegroundColor = "#ff7c7c";
   const nightmodeBackgroundColor = "#1c0d0d";
-  const nightmodeSphereForegroundColor = "#ff7f76";
-  const nightmodeSphereBackgroundColor = "#460a00";
+  const nightmodeSphereForegroundColor = "#d85349";
+  const nightmodeSphereBackgroundColor = "#330801";
 
   if (toggleInput.checked) {
     toggleInput.checked = true;
