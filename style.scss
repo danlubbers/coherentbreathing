@@ -13,7 +13,6 @@
   // other variables
   --animation: paused;
   --animation-name: "";
-
   background-color: var(--background-color);
 }
 
@@ -32,7 +31,7 @@
   justify-content: flex-start;
   align-items: center;
   // TITLE
-  .app-title {
+  .header-title {
     margin-bottom: 0;
     font-size: 1.6rem;
     color: var(--foreground-color);
@@ -41,7 +40,7 @@
   // toggle | normal and night modes
   section {
     .toggle-container {
-      input {
+      .toggle-input {
         position: absolute !important;
         width: 1px;
         height: 1px;
@@ -49,14 +48,14 @@
         clip: rect(0, 0, 0, 0);
         bottom: 0;
       }
-      input:checked + label {
+      .toggle-input:checked + .toggle-label {
         background: var(--nightmode-sphere-background);
       }
-      input:checked + label:after {
+      .toggle-input:checked + .toggle-label:after {
         right: 2px;
         background: var(--nightmode-background-color);
       }
-      label {
+      .toggle-label {
         display: inline-block;
         position: relative;
         height: 2rem;
@@ -67,7 +66,7 @@
         color: transparent;
         border-radius: 22px;
       }
-      label:after {
+      .toggle-label:after {
         content: "";
         display: block;
         height: 1.8rem;
@@ -83,7 +82,7 @@
           var(--sphere-background)
         );
       }
-      label {
+      .toggle-label {
         transition: background-color 500ms ease;
         &:after {
           transition: right 500ms ease, background-color 500ms ease,
@@ -117,7 +116,7 @@
     flex-direction: column;
     align-items: center;
     border-radius: 1rem;
-    background-color: #eee;
+    background-color: var(--fore);
     z-index: 10;
 
     .modal-logo {

@@ -7,13 +7,55 @@ if ("service-worker" in navigator) {
   });
 }
 
+const root = document.documentElement;
 const headerContainer = document.querySelector(".header-container");
+const headerTitle = document.querySelector(".header-title");
+const toggleInput = document.querySelector(".toggle-input");
+const toggleLabel = document.querySelector(".toggle-label");
 const sphereContainer = document.querySelector(".sphere-container");
 const sphere = document.querySelector(".sphere");
 const caption = document.querySelector(".caption");
 const gong = document.querySelector("#gong");
 const btnContainer = document.querySelector(".btn-container");
 const resetBtn = document.querySelector(".reset-btn");
+
+toggleInput.addEventListener("click", () => {
+  // Color Theme
+  const foregroundColor = "#eee";
+  const backgroundColor = "#222";
+  const sphereForegroundColor = "#13eb86";
+  const sphereBackgroundColor = "#1693e6";
+  // Night Color Theme
+  const nightmodeForegroundColor = "#ff7c7c";
+  const nightmodeBackgroundColor = "#1c0d0d";
+  const nightmodeSphereForegroundColor = "#ff7f76";
+  const nightmodeSphereBackgroundColor = "#460a00";
+
+  if (toggleInput.checked) {
+    toggleInput.checked = true;
+    root.style.backgroundColor = nightmodeBackgroundColor;
+    headerTitle.style.color = nightmodeForegroundColor;
+    toggleLabel.style.backgroundColor = nightmodeForegroundColor;
+    sphere.setAttribute(
+      "style",
+      `background: radial-gradient(circle, ${nightmodeSphereForegroundColor}, ${nightmodeSphereBackgroundColor})`
+    );
+    caption.style.color = nightmodeForegroundColor;
+    resetBtn.style.color = nightmodeForegroundColor;
+  }
+  if (!toggleInput.checked) {
+    toggleInput.checked = false;
+    root.style.backgroundColor = backgroundColor;
+    headerTitle.style.color = foregroundColor;
+    toggleLabel.style.backgroundColor = foregroundColor;
+    sphere.setAttribute(
+      "style",
+      `background: radial-gradient(circle, ${sphereForegroundColor}, ${sphereBackgroundColor})`
+    );
+    caption.style.color = foregroundColor;
+    resetBtn.style.color = foregroundColor;
+  }
+});
 
 sphere.addEventListener("click", () => {
   if (sphere.dataset.state === "stop") {
@@ -34,7 +76,6 @@ sphere.addEventListener("click", () => {
   }
 });
 
-// broken
 resetBtn.addEventListener("click", () => {
   sphere.style.animation = "paused"; // resets animation
   caption.style.setProperty("--animation-name", "paused"); // resets pseud-element animation
