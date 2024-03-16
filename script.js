@@ -19,6 +19,7 @@ const gong = document.querySelector("#gong");
 const btnContainer = document.querySelector(".btn-container");
 const resetBtn = document.querySelector(".reset-btn");
 const footerContainer = document.querySelector("footer");
+const footerLink = document.querySelector(".footer-link");
 
 const resetAnimationAndAudio = () => {
   sphere.style.animation = "paused"; // resets animation
@@ -51,6 +52,8 @@ toggleInput.addEventListener("click", () => {
     );
     caption.style.color = nightmodeForegroundColor;
     resetBtn.style.color = nightmodeForegroundColor;
+    footerContainer.style.color = nightmodeForegroundColor;
+    footerLink.style.color = nightmodeForegroundColor;
     resetAnimationAndAudio();
   }
   if (!toggleInput.checked) {
@@ -64,6 +67,8 @@ toggleInput.addEventListener("click", () => {
     );
     caption.style.color = foregroundColor;
     resetBtn.style.color = foregroundColor;
+    footerContainer.style.color = foregroundColor;
+    footerLink.style.color = foregroundColor;
     resetAnimationAndAudio();
   }
 });
