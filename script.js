@@ -50,6 +50,7 @@ toggleInput.addEventListener("click", () => {
     );
     caption.style.color = nightmodeForegroundColor;
     resetBtn.style.color = nightmodeForegroundColor;
+    resetAnimationAndAudio();
   }
   if (!toggleInput.checked) {
     toggleInput.checked = false;
@@ -62,6 +63,7 @@ toggleInput.addEventListener("click", () => {
     );
     caption.style.color = foregroundColor;
     resetBtn.style.color = foregroundColor;
+    resetAnimationAndAudio();
   }
 });
 
