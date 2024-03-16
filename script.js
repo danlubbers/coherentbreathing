@@ -44,26 +44,24 @@ toggleInput.addEventListener("click", () => {
     root.style.backgroundColor = nightmodeBackgroundColor;
     headerTitle.style.color = nightmodeForegroundColor;
     toggleLabel.style.backgroundColor = nightmodeForegroundColor;
-    sphere.setAttribute(
-      "style",
-      `background: radial-gradient(circle, ${nightmodeSphereForegroundColor}, ${nightmodeSphereBackgroundColor})`
+    sphere.style.setProperty(
+      "--sphere-gradient-colors",
+      `radial-gradient(circle, ${nightmodeSphereForegroundColor}, ${nightmodeSphereBackgroundColor})`
     );
     caption.style.color = nightmodeForegroundColor;
     resetBtn.style.color = nightmodeForegroundColor;
-    resetAnimationAndAudio();
   }
   if (!toggleInput.checked) {
     toggleInput.checked = false;
     root.style.backgroundColor = backgroundColor;
     headerTitle.style.color = foregroundColor;
     toggleLabel.style.backgroundColor = foregroundColor;
-    sphere.setAttribute(
-      "style",
-      `background: radial-gradient(circle, ${sphereForegroundColor}, ${sphereBackgroundColor})`
+    sphere.style.setProperty(
+      "--sphere-gradient-colors",
+      `radial-gradient(circle, ${sphereForegroundColor}, ${sphereBackgroundColor})`
     );
     caption.style.color = foregroundColor;
     resetBtn.style.color = foregroundColor;
-    resetAnimationAndAudio();
   }
 });
 
