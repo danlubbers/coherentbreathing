@@ -4,6 +4,17 @@
   --background-color: #222;
   --sphere-foreground: #13eb86;
   --sphere-background: #1693e6;
+  --sphere-gradient-colors: radial-gradient(
+    circle,
+    var(--sphere-foreground),
+    var(--sphere-background)
+  );
+
+  // nightmode
+  --nightmode-foreground-color: #ff7c7c;
+  --nightmode-background-color: #1c0d0d;
+  --nightmode-sphere-foreground: #d85349;
+  --nightmode-sphere-background: #330801;
 
   // other variables
   --animation: paused;
@@ -21,10 +32,69 @@
   font-family: "Montserrat", sans-serif;
 }
 
-// TITLE
-.app-title {
-  font-size: 1.6rem;
-  color: var(--foreground-color);
+.header-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  // TITLE
+  .header-title {
+    margin-bottom: 0;
+    font-size: 1.6rem;
+    color: var(--foreground-color);
+  }
+
+  // toggle | normal and night modes
+  section {
+    .toggle-container {
+      .toggle-input {
+        position: absolute !important;
+        width: 1px;
+        height: 1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        bottom: 0;
+      }
+      .toggle-input:checked + .toggle-label:after {
+        right: 2px;
+        background: radial-gradient(
+          circle,
+          var(--nightmode-sphere-foreground),
+          var(--nightmode-sphere-background)
+        );
+      }
+      .toggle-label {
+        display: inline-block;
+        position: relative;
+        height: 2rem;
+        width: 4rem;
+        background-color: var(--foreground-color);
+        cursor: pointer;
+        font-size: 0;
+        color: transparent;
+        border-radius: 22px;
+      }
+      .toggle-label:after {
+        content: "";
+        display: block;
+        height: 1.8rem;
+        width: 1.8rem;
+        position: absolute;
+        top: 2px;
+        right: 2.1rem;
+        border-radius: 50%;
+        backdrop-filter: blur(10px);
+        background: var(--sphere-gradient-colors);
+      }
+      .toggle-label {
+        transition: background-color 500ms ease;
+        &:after {
+          transition: right 500ms ease, background-color 500ms ease,
+            box-shadow 500ms ease;
+        }
+      }
+    }
+  }
 }
 
 // MODAL
@@ -50,7 +120,7 @@
     flex-direction: column;
     align-items: center;
     border-radius: 1rem;
-    background-color: #eee;
+    background-color: var(--fore);
     z-index: 10;
 
     .modal-logo {
@@ -81,11 +151,7 @@
     height: 10rem;
     border-radius: 50%;
     backdrop-filter: blur(10px);
-    background: radial-gradient(
-      circle,
-      var(--sphere-foreground),
-      var(--sphere-background)
-    );
+    background: var(--sphere-gradient-colors);
 
     // executed in script.js
     // animation-name: breath;
@@ -93,7 +159,6 @@
     // animation-iteration-count: infinite;
     // animation-timing-function: ease-in-out;
     // animation-play-state: var(--animation);
-
     > .caption {
       height: 100%;
       display: flex;
