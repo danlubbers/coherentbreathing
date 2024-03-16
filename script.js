@@ -19,6 +19,14 @@ const gong = document.querySelector("#gong");
 const btnContainer = document.querySelector(".btn-container");
 const resetBtn = document.querySelector(".reset-btn");
 
+const resetAnimationAndAudio = () => {
+  sphere.style.animation = "paused"; // resets animation
+  caption.style.setProperty("--animation-name", "paused"); // resets pseud-element animation
+
+  gong.pause();
+  gong.currentTime = 0; // reset audio to beginning
+};
+
 toggleInput.addEventListener("click", () => {
   // Color Theme
   const foregroundColor = "#eee";
@@ -42,6 +50,7 @@ toggleInput.addEventListener("click", () => {
     );
     caption.style.color = nightmodeForegroundColor;
     resetBtn.style.color = nightmodeForegroundColor;
+    resetAnimationAndAudio();
   }
   if (!toggleInput.checked) {
     toggleInput.checked = false;
@@ -54,6 +63,7 @@ toggleInput.addEventListener("click", () => {
     );
     caption.style.color = foregroundColor;
     resetBtn.style.color = foregroundColor;
+    resetAnimationAndAudio();
   }
 });
 
@@ -76,10 +86,4 @@ sphere.addEventListener("click", () => {
   }
 });
 
-resetBtn.addEventListener("click", () => {
-  sphere.style.animation = "paused"; // resets animation
-  caption.style.setProperty("--animation-name", "paused"); // resets pseud-element animation
-
-  gong.pause();
-  gong.currentTime = 0; // reset audio to beginning
-});
+resetBtn.addEventListener("click", () => resetAnimationAndAudio());
