@@ -12,6 +12,17 @@ export default defineConfig({
         clientsClaim: true,
         skipWaiting: true,
       },
+      includeAssets: [
+        "/",
+        "index.html",
+        "base.css",
+        "style.scss",
+        "script.js",
+        "/assets/icon-144x144.png",
+        "/assets/icon-192x192.png",
+        "/assets/icon-512x512.png",
+        "https://s3.amazonaws.com/content.danlubbers.com/audio/coherent_breathing_45min.mp3",
+      ],
       manifest: {
         name: "Coherent Breathing",
         short_name: "Coherent Breathing",
