@@ -1,13 +1,14 @@
 {
   "name": "coherent breathing",
+  "version": "0.0.0",
   "private": true,
+  "type": "module",
   "author": "Dan Lubbers <dan@danlubbers.com>",
   "homepage": "https://coherentbreathing.app",
   "repository": {
     "type": "git",
     "url": "https://github.com/danlubbers/coherentbreathing"
   },
-  "version": "0.0.0",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
