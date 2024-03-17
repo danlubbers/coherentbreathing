@@ -25,6 +25,20 @@
     <link rel="stylesheet" href="base.css" />
     <link rel="stylesheet" href="style.scss" />
   </head>
+  <!-- Google tag (gtag.js) -->
+  <script
+    async
+    src="https://www.googletagmanager.com/gtag/js?id=G-03PKJMHX8Y"
+  ></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag("js", new Date());
+
+    gtag("config", "G-03PKJMHX8Y");
+  </script>
   <body>
     <main id="app">
       <!-- <div id="modal" class="modal">
@@ -85,20 +99,5 @@
     </main>
 
     <script type="module" src="script.js"></script>
-
-    <!-- Google tag (gtag.js) -->
-    <script
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=G-03PKJMHX8Y"
-    ></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag("js", new Date());
-
-      gtag("config", "G-03PKJMHX8Y");
-    </script>
   </body>
 </html>
