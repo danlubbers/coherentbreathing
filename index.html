@@ -88,6 +88,13 @@
 
     gtag("config", "G-03PKJMHX8Y");
   </script>
+  <!-- Register the app's service worker. -->
+  <script>
+    if ("serviceWorker" in navigator) {
+      navigator.serviceWorker.register("service-worker.js");
+    }
+  </script>
+
   <body>
     <main id="app">
       <!-- <div id="modal" class="modal">
