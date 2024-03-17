@@ -26,6 +26,12 @@
       "purpose": "maskable"
     },
     {
+      "src": "/assets/apple_splash_390.png",
+      "sizes": "390x840",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
       "src": "/assets/apple_splash_640.png",
       "sizes": "640x1136",
       "type": "image/png",
