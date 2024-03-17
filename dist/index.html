@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link rel="manifest" href="/assets/manifest-SM6rzt1q.json" />
+    <meta name="author" content="Dan Lubbers" />
+    <meta name="theme-color" content="#222" />
+    <meta
+      name="description"
+      content="Coherent Breathing also known as resonant breathing is a type of breathing that involves taking five to six breaths per minute soothing the nervous system into a parasympathetic state for relaxation"
+    />
+    <title>Coherent Breathing</title>
+    <link rel="icon" href="/assets/favicon-DsebjIrr.ico" />
+    <link rel="apple-touch-icon" href="/assets/icon-144x144-p0__smVT.png" />
+    <link rel="apple-touch-icon" href="/assets/icon-192x192-CjyXZlXj.png" />
+    <link rel="apple-touch-icon" href="/assets/icon-512x512-ua8kqAkE.png" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <link
+      rel="apple-touch-startup-image"
+      href="/assets/apple_splash_640-BjUpkbIw.png"
+      sizes="640x1136"
+      media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)"
+    />
+    <link
+      rel="apple-touch-startup-image"
+      href="/assets/apple_splash_750-C6FXkw7g.png"
+      sizes="750x1334"
+      media="(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)"
+    />
+    <link
+      rel="apple-touch-startup-image"
+      href="/assets/apple_splash_1125-opPg8ZUC.png"
+      sizes="1125x2436"
+      media="(device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)"
+    />
+    <link
+      rel="apple-touch-startup-image"
+      href="/assets/apple_splash_1170-CW9LiA71.png"
+      sizes="1170x2532"
+      media="(device-width: 390px) and (device-height: 844px) and (-webkit-device-pixel-ratio: 3)"
+    />
+    <link
+      rel="apple-touch-startup-image"
+      href="/assets/apple_splash_1242-BEwgCIDL.png"
+      sizes="1242x2208"
+      media="(device-width: 414px) and (device-height: 736px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)"
+    />
+    <link
+      rel="apple-touch-startup-image"
+      href="/assets/apple_splash_1536-Cnc7nf7q.png"
+      sizes="1536x2048"
+      media="(min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait)"
+    />
+    <link
+      rel="apple-touch-startup-image"
+      href="/assets/apple_splash_1668-BJ0CX0ft.png"
+      sizes="1668x2224"
+      media="(min-device-width: 834px) and (max-device-width: 834px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait)"
+    />
+    <link
+      rel="apple-touch-startup-image"
+      href="/assets/apple_splash_2048-1b4cbFUb.png"
+      sizes="2048x2732"
+      media="(min-device-width: 1024px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait)"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200&display=swap"
+      rel="stylesheet"
+    />
+    <script type="module" crossorigin src="/assets/index-DlE0lU9g.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-_P97Iwrj.css">
+  </head>
+  <!-- Google tag (gtag.js) -->
+  <script
+    async
+    src="https://www.googletagmanager.com/gtag/js?id=G-03PKJMHX8Y"
+  ></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag("js", new Date());
+
+    gtag("config", "G-03PKJMHX8Y");
+  </script>
+  <body>
+    <main id="app">
+      <!-- <div id="modal" class="modal">
+        <div class="modal-content">
+          <h1 class="'modal-logo">logo</h1>
+          <p class="modal-description">
+            Coherent breathing, also known as resonant breathing, is a type of
+            breathing that involves taking five to six breaths per minute, which
+            results in 5.5 second inhales and exhales. Each breath should feel
+            like a circle.
+          </p>
+          <p>
+            Coherent breathing can help to calm the body by affecting the
+            autonomic nervous system (ANS). It can also affect the phrenic
+            nerve, which improves blood circulation, and the amygdala, a part of
+            the brain that regulates emotions, fear, and
+          </p>
+          <button class="modal-btn">close</button>
+        </div>
+      </div> -->
+      <div class="header-container">
+        <h1 class="header-title">Coherent Breathing</h1>
+        <section>
+          <div class="toggle-container">
+            <input id="toggle" class="toggle-input" type="checkbox" />
+            <label for="toggle" class="toggle-label">Select</label>
+          </div>
+        </section>
+      </div>
+      <div class="sphere-container">
+        <figure class="sphere" data-state="stop">
+          <figcaption class="caption" />
+        </figure>
+        <audio
+          loop
+          id="gong"
+          src="https://s3.amazonaws.com/content.danlubbers.com/audio/coherent_breathing_45min.mp3"
+          preload="auto"
+        >
+          Your browser does not support the <code>audio</code> element.
+        </audio>
+      </div>
+      <div class="btn-container">
+        <button class="reset-btn">Reset</button>
+      </div>
+      <footer>
+        <p class="footer-text">
+          © 2024 |
+          <a
+            class="footer-link"
+            href="https://danlubbers.com "
+            target="_blank"
+            rel="noopener noreferrer"
+            >danlubbers.com</a
+          >
+        </p>
+      </footer>
+    </main>
+
+  </body>
+</html>
