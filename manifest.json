@@ -29,12 +29,6 @@
   ],
   "screenshots": [
     {
-      "src": "/assets/apple_splash_640.png",
-      "type": "image/png",
-      "sizes": "640x1136",
-      "form_factor": "narrow"
-    },
-    {
       "src": "/assets/apple_splash_1170.png",
       "type": "image/png",
       "sizes": "1170x2532",
