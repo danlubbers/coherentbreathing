@@ -8,7 +8,7 @@ export default defineConfig({
     rollupOptions: {
       input: {
         main: "index.html",
-        robots: "/robots.txt",
+        robots: "robots.txt",
         // Add more input files as needed
       },
     },
@@ -33,19 +33,19 @@ export default defineConfig({
         background_color: "#222",
         icons: [
           {
-            src: "/assets/icon-144x144.png",
+            src: "assets/icon-144x144.png",
             sizes: "144x144",
             type: "image/png",
             purpose: "any",
           },
           {
-            src: "/assets/icon-192x192.png",
+            src: "assets/icon-192x192.png",
             sizes: "192x192",
             type: "image/png",
             purpose: "maskable",
           },
           {
-            src: "/assets/icon-512x512.png",
+            src: "assets/icon-512x512.png",
             sizes: "512x512",
             type: "image/png",
             purpose: "maskable",
@@ -53,13 +53,13 @@ export default defineConfig({
         ],
         screenshots: [
           {
-            src: "/assets/apple_splash_640.png",
+            src: "assets/apple_splash_640.png",
             type: "image/png",
             sizes: "640x1136",
             form_factor: "narrow",
           },
           {
-            src: "/assets/apple_splash_1136-wide.png",
+            src: "assets/apple_splash_1136-wide.png",
             type: "image/png",
             sizes: "1136x640",
             form_factor: "wide",
