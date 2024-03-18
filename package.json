@@ -12,7 +12,6 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "postinstall": "node generate-robots-txt.js",
     "preview": "vite preview"
   },
   "dependencies": {
