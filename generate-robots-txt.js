@@ -1,4 +1,4 @@
-const fs = require("fs");
+import { fs } from "fs";
 
 const productionRobotsTxt = "User-agent: *\nDisallow:";
 const nonProductionRobotsTxt = "User-agent: *\nDisallow: /";
