@@ -4,6 +4,13 @@ import { VitePWA } from "vite-plugin-pwa";
 export default defineConfig({
   build: {
     manifest: true,
+    rollupOptions: {
+      input: {
+        main: "index.html",
+        robots: "/robots.txt",
+        // Add more input files as needed
+      },
+    },
   },
   plugins: [
     VitePWA({
