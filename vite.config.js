@@ -8,8 +8,7 @@ export default defineConfig({
     rollupOptions: {
       input: {
         main: "index.html",
-        robots: "robots.txt",
-        // Add more input files as needed
+        robots: "/robots.txt",
       },
     },
   },
