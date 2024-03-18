@@ -35,6 +35,12 @@
       "form_factor": "narrow"
     },
     {
+      "src": "/assets/apple_splash_1170.png",
+      "type": "image/png",
+      "sizes": "1170x2532",
+      "form_factor": "narrow"
+    },
+    {
       "src": "/assets/apple_splash_1136-wide.png",
       "type": "image/png",
       "sizes": "1136x640",
