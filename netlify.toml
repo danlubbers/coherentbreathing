@@ -2,6 +2,19 @@
   publish = "dist"
   command = "pnpm run build"
 
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/robots.txt"
+  to = "/robots-disallow.txt"
+  status = 200
+  force = true
+  [build.environment]
+  NODE_ENV = "production"
+
 [[headers]]
   for = "/manifest.webmanifest"
   [headers.values]
