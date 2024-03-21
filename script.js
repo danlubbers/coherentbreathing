@@ -1,5 +1,10 @@
+import checkForIOS from "./isIOS";
+
 const root = document.documentElement;
+const prompt = checkForIOS();
 const headerContainer = document.querySelector(".header-container");
+const modalContainer = document.querySelector(".modal");
+const modalBtn = document.querySelector(".modal-btn");
 const headerTitle = document.querySelector(".header-title");
 const toggleInput = document.querySelector(".toggle-input");
 const toggleLabel = document.querySelector(".toggle-label");
@@ -11,6 +16,17 @@ const btnContainer = document.querySelector(".btn-container");
 const resetBtn = document.querySelector(".reset-btn");
 const footerContainer = document.querySelector("footer");
 const footerLink = document.querySelector(".footer-link");
+
+if (prompt) {
+  // Show modal based on IOS and time
+  modalContainer.style.display = "flex";
+}
+
+// User closes modal
+modalBtn.addEventListener(
+  "click",
+  () => (modalContainer.style.display = "none")
+);
 
 const resetAnimationAndAudio = () => {
   sphere.style.animation = "paused"; // resets animation
