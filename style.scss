@@ -42,8 +42,7 @@
   display: none;
   justify-content: center;
   align-items: center;
-  background-color: var(--background-color);
-  backdrop-filter: blur(1.5rem);
+  backdrop-filter: blur(1rem);
   z-index: 100;
 
   @media (min-width: 769px) {
@@ -66,6 +65,12 @@
 
     p {
       padding: 0.4rem;
+    }
+
+    .paragraph-two {
+      @media (max-width: 375px) {
+        display: none;
+      }
     }
 
     .install-pwa-container {
