@@ -106,22 +106,22 @@
   left: 0;
   display: flex;
   justify-content: center;
+  align-items: center;
+  background-color: var(--background-color);
+  z-index: 100;
 
   @media (min-width: 769px) {
     display: none;
   }
 
   .modal-content {
+    padding: 1rem;
     width: 90%;
-    height: 75vh;
-    position: relative;
-    top: 15%;
     display: flex;
     flex-direction: column;
     align-items: center;
     border-radius: 1rem;
-    background-color: var(--fore);
-    z-index: 10;
+    background-color: var(--foreground-color);
 
     .modal-logo {
       color: var(--background-color);

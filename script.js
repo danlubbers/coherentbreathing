@@ -1,3 +1,8 @@
+import checkForIOS from "./isIOS";
+
+const prompt = checkForIOS();
+console.log("prompt", prompt);
+
 const root = document.documentElement;
 const headerContainer = document.querySelector(".header-container");
 const headerTitle = document.querySelector(".header-title");
