@@ -52,6 +52,21 @@ export default defineConfig({
               },
             },
           },
+          {
+            urlPattern:
+              /^https:\/\/s3.amazonaws.com\/content.danlubbers.com\/audio\/coherent_breathing_45min.mp3\/.*/i,
+            handler: "CacheFirst",
+            options: {
+              cacheName: "gong-audio-cache",
+              expiration: {
+                maxEntries: 10,
+                maxAgeSeconds: 60 * 60 * 24 * 365, // <== 365 days
+              },
+              cacheableResponse: {
+                statuses: [0, 200],
+              },
+            },
+          },
         ],
       },
     }),
