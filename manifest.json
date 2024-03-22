@@ -40,5 +40,12 @@
       "sizes": "1136x640",
       "form_factor": "wide"
     }
-  ]
+  ],
+  "cache": {
+    "maxsize": 100,
+    "querytype": "url",
+    "urls": [
+      "https://s3.amazonaws.com/content.danlubbers.com/audio/coherent_breathing_45min.mp3"
+    ]
+  }
 }
