@@ -6,8 +6,8 @@ const headerContainer = document.querySelector(".header-container");
 const modalContainer = document.querySelector(".modal");
 const modalBtn = document.querySelector(".modal-btn");
 const headerTitle = document.querySelector(".header-title");
-const toggleInput = document.querySelector(".toggle-input");
-const toggleLabel = document.querySelector(".toggle-label");
+const toggleThemeInput = document.querySelector(".toggle-theme-input");
+const toggleThemeLabel = document.querySelector(".toggle-theme-label");
 const sphereContainer = document.querySelector(".sphere-container");
 const sphere = document.querySelector(".sphere");
 const caption = document.querySelector(".caption");
@@ -36,7 +36,7 @@ const resetAnimationAndAudio = () => {
   gong.currentTime = 0; // reset audio to beginning
 };
 
-toggleInput.addEventListener("click", () => {
+toggleThemeInput.addEventListener("click", () => {
   // Color Theme
   const foregroundColor = "#eee";
   const backgroundColor = "#222";
@@ -48,11 +48,11 @@ toggleInput.addEventListener("click", () => {
   const nightmodeSphereForegroundColor = "#d85349";
   const nightmodeSphereBackgroundColor = "#330801";
 
-  if (toggleInput.checked) {
-    toggleInput.checked = true;
+  if (toggleThemeInput.checked) {
+    toggleThemeInput.checked = true;
     root.style.backgroundColor = nightmodeBackgroundColor;
     headerTitle.style.color = nightmodeForegroundColor;
-    toggleLabel.style.backgroundColor = nightmodeForegroundColor;
+    toggleThemeLabel.style.backgroundColor = nightmodeForegroundColor;
     sphere.style.setProperty(
       "--sphere-gradient-colors",
       `radial-gradient(circle, ${nightmodeSphereForegroundColor}, ${nightmodeSphereBackgroundColor})`
@@ -63,11 +63,11 @@ toggleInput.addEventListener("click", () => {
     footerLink.style.color = nightmodeForegroundColor;
     resetAnimationAndAudio();
   }
-  if (!toggleInput.checked) {
-    toggleInput.checked = false;
+  if (!toggleThemeInput.checked) {
+    toggleThemeInput.checked = false;
     root.style.backgroundColor = backgroundColor;
     headerTitle.style.color = foregroundColor;
-    toggleLabel.style.backgroundColor = foregroundColor;
+    toggleThemeLabel.style.backgroundColor = foregroundColor;
     sphere.style.setProperty(
       "--sphere-gradient-colors",
       `radial-gradient(circle, ${sphereForegroundColor}, ${sphereBackgroundColor})`
