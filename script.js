@@ -12,7 +12,7 @@ const sphereContainer = document.querySelector(".sphere-container");
 const sphere = document.querySelector(".sphere");
 const caption = document.querySelector(".caption");
 const gong = document.querySelector("#gong");
-const btnContainer = document.querySelector(".btn-container");
+const controlsContainer = document.querySelector(".controls-container");
 const resetBtn = document.querySelector(".reset-btn");
 const footerContainer = document.querySelector("footer");
 const footerLink = document.querySelector(".footer-link");
@@ -83,7 +83,7 @@ toggleThemeInput.addEventListener("click", () => {
 sphere.addEventListener("click", () => {
   if (sphere.dataset.state === "stop") {
     headerContainer.setAttribute("style", "visibility: hidden");
-    btnContainer.setAttribute("style", "visibility: hidden");
+    controlsContainer.setAttribute("style", "visibility: hidden");
     footerContainer.setAttribute("style", "visibility: hidden");
     sphere.dataset.state = "play";
     sphere.style.animation = "breath 11s infinite ease-in-out running";
@@ -92,7 +92,7 @@ sphere.addEventListener("click", () => {
     gong.play();
   } else if (sphere.dataset.state === "play") {
     headerContainer.setAttribute("style", "visibility: visible");
-    btnContainer.setAttribute("style", "visibility: visible");
+    controlsContainer.setAttribute("style", "visibility: visible");
     footerContainer.setAttribute("style", "visibility: visibility");
     sphere.dataset.state = "stop";
     sphere.style.animationPlayState = "paused";
