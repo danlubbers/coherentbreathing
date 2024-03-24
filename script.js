@@ -18,6 +18,7 @@ const audioInput = document.querySelector(".toggle-audio-input");
 const audioIcon = document.querySelector(".audio-icon");
 const resetBtn = document.querySelector(".reset-btn");
 const footerContainer = document.querySelector("footer");
+const footerText = document.querySelector(".footer-text");
 const footerLink = document.querySelector(".footer-link");
 
 if (prompt) {
@@ -63,7 +64,7 @@ toggleThemeInput.addEventListener("click", () => {
     caption.style.color = nightmodeForegroundColor;
     audioIcon.style.backgroundColor = nightmodeForegroundColor;
     resetBtn.style.color = nightmodeForegroundColor;
-    footerContainer.style.color = nightmodeForegroundColor;
+    footerText.style.color = nightmodeForegroundColor;
     footerLink.style.color = nightmodeForegroundColor;
     resetAnimationAndAudio();
   }
@@ -79,7 +80,7 @@ toggleThemeInput.addEventListener("click", () => {
     caption.style.color = foregroundColor;
     audioIcon.style.backgroundColor = foregroundColor;
     resetBtn.style.color = foregroundColor;
-    footerContainer.style.color = foregroundColor;
+    footerText.style.color = foregroundColor;
     footerLink.style.color = foregroundColor;
     resetAnimationAndAudio();
   }
@@ -98,7 +99,7 @@ sphere.addEventListener("click", () => {
   } else if (sphere.dataset.state === "play") {
     headerContainer.setAttribute("style", "visibility: visible");
     controlsContainer.setAttribute("style", "visibility: visible");
-    footerContainer.setAttribute("style", "visibility: visibility");
+    footerContainer.setAttribute("style", "visibility: visible");
     sphere.dataset.state = "stop";
     sphere.style.animationPlayState = "paused";
     caption.style.setProperty("--animation", "paused");

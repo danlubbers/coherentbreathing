@@ -280,12 +280,11 @@
 }
 
 footer {
-  color: var(--foreground-color);
-
   .footer-text {
     margin-bottom: 0.6rem;
     text-align: center;
     font-size: 0.7rem;
+    color: var(--foreground-color);
   }
   .footer-link {
     color: var(--foreground-color);
