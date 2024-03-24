@@ -212,7 +212,6 @@
   width: 100%;
   text-align: center;
   align-self: center;
-  color: var(--foreground-color);
 
   section {
     margin-bottom: 1rem;
@@ -244,7 +243,6 @@
             top: 8px;
             background-image: url("/assets/icons/audio.png");
             background-size: 20px 20px;
-
             transition: 0.2s;
           }
         }
@@ -278,9 +276,6 @@
     letter-spacing: 0.1rem;
     color: var(--foreground-color);
     background-color: transparent;
-  }
-  &:hover {
-    opacity: 0.8;
   }
 }
 
