@@ -224,7 +224,7 @@
         clip: rect(0, 0, 0, 0);
         bottom: 0;
 
-        ~ .icon {
+        ~ .audio-icon {
           content: "";
           width: 2rem;
           height: 2rem;
@@ -234,7 +234,7 @@
           background-color: var(--foreground-color);
           border-radius: 50%;
 
-          &.icon:before {
+          &.audio-icon:before {
             content: "";
             width: 20px;
             height: 20px;
@@ -248,7 +248,7 @@
         }
 
         &:checked {
-          ~ .icon:before {
+          ~ .audio-icon:before {
             background-image: url("/assets/icons/no-audio.png");
           }
         }

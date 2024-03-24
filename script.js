@@ -13,6 +13,7 @@ const sphere = document.querySelector(".sphere");
 const caption = document.querySelector(".caption");
 const gong = document.querySelector("#gong");
 const controlsContainer = document.querySelector(".controls-container");
+const audioIcon = document.querySelector(".audio-icon");
 const resetBtn = document.querySelector(".reset-btn");
 const footerContainer = document.querySelector("footer");
 const footerLink = document.querySelector(".footer-link");
@@ -58,6 +59,7 @@ toggleThemeInput.addEventListener("click", () => {
       `radial-gradient(circle, ${nightmodeSphereForegroundColor}, ${nightmodeSphereBackgroundColor})`
     );
     caption.style.color = nightmodeForegroundColor;
+    audioIcon.style.backgroundColor = nightmodeForegroundColor;
     resetBtn.style.color = nightmodeForegroundColor;
     footerContainer.style.color = nightmodeForegroundColor;
     footerLink.style.color = nightmodeForegroundColor;
@@ -73,6 +75,7 @@ toggleThemeInput.addEventListener("click", () => {
       `radial-gradient(circle, ${sphereForegroundColor}, ${sphereBackgroundColor})`
     );
     caption.style.color = foregroundColor;
+    audioIcon.style.backgroundColor = foregroundColor;
     resetBtn.style.color = foregroundColor;
     footerContainer.style.color = foregroundColor;
     footerLink.style.color = foregroundColor;
