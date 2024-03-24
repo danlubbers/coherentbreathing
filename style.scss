@@ -210,11 +210,11 @@
 
 .controls-container {
   width: 100%;
-  height: 2.5rem;
   text-align: center;
   align-self: center;
 
   section {
+    margin-bottom: 1rem;
     .toggle-audio-container {
       .toggle-audio-input {
         position: absolute !important;
@@ -224,63 +224,46 @@
         clip: rect(0, 0, 0, 0);
         bottom: 0;
 
-        ~ .icon:before {
+        ~ .icon {
           content: "";
-          width: 20px;
-          height: 20px;
+          width: 2rem;
+          height: 2rem;
           position: absolute;
-          left: 113px;
-          top: 28px;
-          background-image: url("/assets/icons/audio.png");
-          background-size: 20px 20px;
-          transition: 0.2s;
-          z-index: 200;
+          left: 44%;
+          top: 50%;
+          background-color: var(--foreground-color);
+          border-radius: 50%;
+
+          &.icon:before {
+            content: "";
+            width: 20px;
+            height: 20px;
+            position: absolute;
+            left: 8px;
+            top: 8px;
+            background-image: url("/assets/icons/audio.png");
+            background-size: 20px 20px;
+
+            transition: 0.2s;
+          }
         }
+
         &:checked {
           ~ .icon:before {
-            left: 100%;
-            margin-left: -1em;
+            background-image: url("/assets/icons/no-audio.png");
           }
         }
       }
-      .toggle-audio-input:checked + .toggle-audio-label:after {
-        right: 2px;
-        background: radial-gradient(
-          circle,
-          var(--foreground-color),
-          var(--background-color)
-        );
-      }
+
       .toggle-audio-label {
         display: inline-block;
         position: relative;
         height: 2rem;
-        width: 4rem;
-
-        background-color: var(--foreground-color);
+        width: 2rem;
         cursor: pointer;
         font-size: 0;
         color: transparent;
-        border-radius: 22px;
-      }
-      .toggle-audio-label:after {
-        content: "shit";
-        display: block;
-        height: 1.8rem;
-        width: 1.8rem;
-        position: absolute;
-        top: 2px;
-        right: 2.1rem;
         border-radius: 50%;
-        backdrop-filter: blur(10px);
-        background: #fff;
-      }
-      .toggle-audio-label {
-        transition: background-color 500ms ease;
-        &:after {
-          transition: right 500ms ease, background-color 500ms ease,
-            box-shadow 500ms ease;
-        }
       }
     }
   }
