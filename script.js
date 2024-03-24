@@ -6,13 +6,16 @@ const headerContainer = document.querySelector(".header-container");
 const modalContainer = document.querySelector(".modal");
 const modalBtn = document.querySelector(".modal-btn");
 const headerTitle = document.querySelector(".header-title");
-const toggleInput = document.querySelector(".toggle-input");
-const toggleLabel = document.querySelector(".toggle-label");
+const toggleThemeInput = document.querySelector(".toggle-theme-input");
+const toggleThemeLabel = document.querySelector(".toggle-theme-label");
 const sphereContainer = document.querySelector(".sphere-container");
 const sphere = document.querySelector(".sphere");
 const caption = document.querySelector(".caption");
 const gong = document.querySelector("#gong");
-const btnContainer = document.querySelector(".btn-container");
+const controlsContainer = document.querySelector(".controls-container");
+const audio = document.querySelector("audio");
+const audioInput = document.querySelector(".toggle-audio-input");
+const audioIcon = document.querySelector(".audio-icon");
 const resetBtn = document.querySelector(".reset-btn");
 const footerContainer = document.querySelector("footer");
 const footerLink = document.querySelector(".footer-link");
@@ -36,7 +39,7 @@ const resetAnimationAndAudio = () => {
   gong.currentTime = 0; // reset audio to beginning
 };
 
-toggleInput.addEventListener("click", () => {
+toggleThemeInput.addEventListener("click", () => {
   // Color Theme
   const foregroundColor = "#eee";
   const backgroundColor = "#222";
@@ -48,31 +51,33 @@ toggleInput.addEventListener("click", () => {
   const nightmodeSphereForegroundColor = "#d85349";
   const nightmodeSphereBackgroundColor = "#330801";
 
-  if (toggleInput.checked) {
-    toggleInput.checked = true;
+  if (toggleThemeInput.checked) {
+    toggleThemeInput.checked = true;
     root.style.backgroundColor = nightmodeBackgroundColor;
     headerTitle.style.color = nightmodeForegroundColor;
-    toggleLabel.style.backgroundColor = nightmodeForegroundColor;
+    toggleThemeLabel.style.backgroundColor = nightmodeForegroundColor;
     sphere.style.setProperty(
       "--sphere-gradient-colors",
       `radial-gradient(circle, ${nightmodeSphereForegroundColor}, ${nightmodeSphereBackgroundColor})`
     );
     caption.style.color = nightmodeForegroundColor;
+    audioIcon.style.backgroundColor = nightmodeForegroundColor;
     resetBtn.style.color = nightmodeForegroundColor;
     footerContainer.style.color = nightmodeForegroundColor;
     footerLink.style.color = nightmodeForegroundColor;
     resetAnimationAndAudio();
   }
-  if (!toggleInput.checked) {
-    toggleInput.checked = false;
+  if (!toggleThemeInput.checked) {
+    toggleThemeInput.checked = false;
     root.style.backgroundColor = backgroundColor;
     headerTitle.style.color = foregroundColor;
-    toggleLabel.style.backgroundColor = foregroundColor;
+    toggleThemeLabel.style.backgroundColor = foregroundColor;
     sphere.style.setProperty(
       "--sphere-gradient-colors",
       `radial-gradient(circle, ${sphereForegroundColor}, ${sphereBackgroundColor})`
     );
     caption.style.color = foregroundColor;
+    audioIcon.style.backgroundColor = foregroundColor;
     resetBtn.style.color = foregroundColor;
     footerContainer.style.color = foregroundColor;
     footerLink.style.color = foregroundColor;
@@ -83,7 +88,7 @@ toggleInput.addEventListener("click", () => {
 sphere.addEventListener("click", () => {
   if (sphere.dataset.state === "stop") {
     headerContainer.setAttribute("style", "visibility: hidden");
-    btnContainer.setAttribute("style", "visibility: hidden");
+    controlsContainer.setAttribute("style", "visibility: hidden");
     footerContainer.setAttribute("style", "visibility: hidden");
     sphere.dataset.state = "play";
     sphere.style.animation = "breath 11s infinite ease-in-out running";
@@ -92,7 +97,7 @@ sphere.addEventListener("click", () => {
     gong.play();
   } else if (sphere.dataset.state === "play") {
     headerContainer.setAttribute("style", "visibility: visible");
-    btnContainer.setAttribute("style", "visibility: visible");
+    controlsContainer.setAttribute("style", "visibility: visible");
     footerContainer.setAttribute("style", "visibility: visibility");
     sphere.dataset.state = "stop";
     sphere.style.animationPlayState = "paused";
@@ -100,5 +105,9 @@ sphere.addEventListener("click", () => {
     gong.pause();
   }
 });
+
+audioInput.addEventListener("click", () =>
+  audioInput.checked === true ? (audio.muted = true) : (audio.muted = false)
+);
 
 resetBtn.addEventListener("click", () => resetAnimationAndAudio());

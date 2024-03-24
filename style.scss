@@ -114,8 +114,8 @@
 
   // toggle | normal and night modes
   section {
-    .toggle-container {
-      .toggle-input {
+    .toggle-theme-container {
+      .toggle-theme-input {
         position: absolute !important;
         width: 1px;
         height: 1px;
@@ -123,7 +123,7 @@
         clip: rect(0, 0, 0, 0);
         bottom: 0;
       }
-      .toggle-input:checked + .toggle-label:after {
+      .toggle-theme-input:checked + .toggle-theme-label:after {
         right: 2px;
         background: radial-gradient(
           circle,
@@ -131,7 +131,7 @@
           var(--nightmode-sphere-background)
         );
       }
-      .toggle-label {
+      .toggle-theme-label {
         display: inline-block;
         position: relative;
         height: 2rem;
@@ -142,7 +142,7 @@
         color: transparent;
         border-radius: 22px;
       }
-      .toggle-label:after {
+      .toggle-theme-label:after {
         content: "";
         display: block;
         height: 1.8rem;
@@ -154,7 +154,7 @@
         backdrop-filter: blur(10px);
         background: var(--sphere-gradient-colors);
       }
-      .toggle-label {
+      .toggle-theme-label {
         transition: background-color 500ms ease;
         &:after {
           transition: right 500ms ease, background-color 500ms ease,
@@ -208,21 +208,74 @@
   }
 }
 
-.btn-container {
+.controls-container {
   width: 100%;
-  height: 2.5rem;
   text-align: center;
   align-self: center;
 
+  section {
+    margin-bottom: 1rem;
+    .toggle-audio-container {
+      .toggle-audio-input {
+        position: absolute !important;
+        width: 1px;
+        height: 1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        bottom: 0;
+
+        ~ .audio-icon {
+          content: "";
+          width: 2rem;
+          height: 2rem;
+          position: absolute;
+          left: 44%;
+          top: 50%;
+          background-color: var(--foreground-color);
+          border-radius: 50%;
+
+          &.audio-icon:before {
+            content: "";
+            width: 20px;
+            height: 20px;
+            position: absolute;
+            left: 8px;
+            top: 8px;
+            background-image: url("/assets/icons/audio.png");
+            background-size: 20px 20px;
+            transition: 0.2s;
+          }
+        }
+
+        &:checked {
+          ~ .audio-icon:before {
+            background-image: url("/assets/icons/no-audio.png");
+          }
+        }
+      }
+
+      .toggle-audio-label {
+        display: inline-block;
+        position: relative;
+        height: 2rem;
+        width: 2rem;
+        cursor: pointer;
+        font-size: 0;
+        color: transparent;
+        border-radius: 50%;
+      }
+    }
+  }
+
   .reset-btn {
+    margin-top: 1rem;
     width: 5rem;
     border: none;
     border-radius: 0.2rem;
+    font-family: "Montserrat", sans-serif;
+    letter-spacing: 0.1rem;
     color: var(--foreground-color);
     background-color: transparent;
-  }
-  &:hover {
-    opacity: 0.8;
   }
 }
 
