@@ -13,6 +13,8 @@ const sphere = document.querySelector(".sphere");
 const caption = document.querySelector(".caption");
 const gong = document.querySelector("#gong");
 const controlsContainer = document.querySelector(".controls-container");
+const audio = document.querySelector("audio");
+const audioInput = document.querySelector(".toggle-audio-input");
 const audioIcon = document.querySelector(".audio-icon");
 const resetBtn = document.querySelector(".reset-btn");
 const footerContainer = document.querySelector("footer");
@@ -103,5 +105,9 @@ sphere.addEventListener("click", () => {
     gong.pause();
   }
 });
+
+audioInput.addEventListener("click", () =>
+  audioInput.checked === true ? (audio.muted = true) : (audio.muted = false)
+);
 
 resetBtn.addEventListener("click", () => resetAnimationAndAudio());
