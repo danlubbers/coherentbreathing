@@ -6,6 +6,7 @@ const headerContainer = document.querySelector(".header-container");
 const modalContainer = document.querySelector(".modal");
 const modalBtn = document.querySelector(".modal-btn");
 const headerTitle = document.querySelector(".header-title");
+const toggleThemeContainer = document.querySelector(".toggle-theme-container");
 const toggleThemeInput = document.querySelector(".toggle-theme-input");
 const toggleThemeLabel = document.querySelector(".toggle-theme-label");
 const sphereContainer = document.querySelector(".sphere-container");
@@ -56,7 +57,7 @@ toggleThemeInput.addEventListener("click", () => {
     toggleThemeInput.checked = true;
     root.style.backgroundColor = nightmodeBackgroundColor;
     headerTitle.style.color = nightmodeForegroundColor;
-    toggleThemeLabel.style.backgroundColor = nightmodeForegroundColor;
+    toggleThemeContainer.style.backgroundColor = nightmodeForegroundColor;
     sphere.style.setProperty(
       "--sphere-gradient-colors",
       `radial-gradient(circle, ${nightmodeSphereForegroundColor}, ${nightmodeSphereBackgroundColor})`
@@ -72,7 +73,7 @@ toggleThemeInput.addEventListener("click", () => {
     toggleThemeInput.checked = false;
     root.style.backgroundColor = backgroundColor;
     headerTitle.style.color = foregroundColor;
-    toggleThemeLabel.style.backgroundColor = foregroundColor;
+    toggleThemeContainer.style.backgroundColor = foregroundColor;
     sphere.style.setProperty(
       "--sphere-gradient-colors",
       `radial-gradient(circle, ${sphereForegroundColor}, ${sphereBackgroundColor})`
