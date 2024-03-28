@@ -8,8 +8,7 @@ const modalBtn = document.querySelector(".modal-btn");
 const headerTitle = document.querySelector(".header-title");
 const toggleThemeContainer = document.querySelector(".toggle-theme-container");
 const toggleThemeInput = document.querySelector(".toggle-theme-input");
-const toggleThemeLabel = document.querySelector(".toggle-theme-label");
-const sphereContainer = document.querySelector(".sphere-container");
+const themeIcon = document.querySelector(".theme-icon");
 const sphere = document.querySelector(".sphere");
 const caption = document.querySelector(".caption");
 const gong = document.querySelector("#gong");
@@ -90,6 +89,7 @@ toggleThemeInput.addEventListener("click", () => {
 sphere.addEventListener("click", () => {
   if (sphere.dataset.state === "stop") {
     headerContainer.setAttribute("style", "visibility: hidden");
+    themeIcon.setAttribute("style", "opacity: 0"); // fixes lag in transition animation
     controlsContainer.setAttribute("style", "visibility: hidden");
     footerContainer.setAttribute("style", "visibility: hidden");
     sphere.dataset.state = "play";
@@ -99,6 +99,7 @@ sphere.addEventListener("click", () => {
     gong.play();
   } else if (sphere.dataset.state === "play") {
     headerContainer.setAttribute("style", "visibility: visible");
+    themeIcon.setAttribute("style", "opacity: 1");
     controlsContainer.setAttribute("style", "visibility: visible");
     footerContainer.setAttribute("style", "visibility: visible");
     sphere.dataset.state = "stop";

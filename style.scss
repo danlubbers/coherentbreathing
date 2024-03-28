@@ -150,7 +150,7 @@
             top: 6px;
             background-image: url("/assets/icons/sun-icon.png");
             background-size: 25px 25px;
-            transition: 0.3s;
+            transition: 0.3s ease-in-out;
           }
         }
 
@@ -167,14 +167,7 @@
           }
         }
       }
-      // .toggle-theme-input:checked + .toggle-theme-label:after {
-      //   right: 2px;
-      //   background: radial-gradient(
-      //     circle,
-      //     var(--nightmode-sphere-foreground),
-      //     var(--nightmode-sphere-background)
-      //   );
-      // }
+
       .toggle-theme-label {
         display: inline-block;
         position: relative;
