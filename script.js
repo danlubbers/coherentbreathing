@@ -58,10 +58,10 @@ toggleThemeInput.addEventListener("click", () => {
     root.style.backgroundColor = nightmodeBackgroundColor;
     headerTitle.style.color = nightmodeForegroundColor;
     toggleThemeContainer.style.backgroundColor = nightmodeForegroundColor;
-    // sphere.style.setProperty(
-    //   "--sphere-gradient-colors",
-    //   `radial-gradient(circle, ${nightmodeSphereForegroundColor}, ${nightmodeSphereBackgroundColor})`
-    // );
+    sphere.style.setProperty(
+      "--sphere-gradient-colors",
+      `radial-gradient(circle, ${nightmodeSphereForegroundColor}, ${nightmodeSphereBackgroundColor})`
+    );
     caption.style.color = nightmodeForegroundColor;
     audioIcon.style.backgroundColor = nightmodeForegroundColor;
     resetBtn.style.color = nightmodeForegroundColor;
@@ -74,10 +74,10 @@ toggleThemeInput.addEventListener("click", () => {
     root.style.backgroundColor = backgroundColor;
     headerTitle.style.color = foregroundColor;
     toggleThemeContainer.style.backgroundColor = foregroundColor;
-    // sphere.style.setProperty(
-    //   "--sphere-gradient-colors",
-    //   `radial-gradient(circle, ${sphereForegroundColor}, ${sphereBackgroundColor})`
-    // );
+    sphere.style.setProperty(
+      "--sphere-gradient-colors",
+      `radial-gradient(circle, ${sphereForegroundColor}, ${sphereBackgroundColor})`
+    );
     caption.style.color = foregroundColor;
     audioIcon.style.backgroundColor = foregroundColor;
     resetBtn.style.color = foregroundColor;
