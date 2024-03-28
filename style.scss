@@ -115,6 +115,15 @@
   // toggle | normal and night modes
   section {
     .toggle-theme-container {
+      display: inline-block;
+      position: relative;
+      height: 2rem;
+      width: 4rem;
+      border-radius: 22px;
+      cursor: pointer;
+      font-size: 0;
+      background-color: var(--foreground-color);
+
       .toggle-theme-input {
         position: absolute !important;
         width: 1px;
@@ -122,38 +131,55 @@
         overflow: hidden;
         clip: rect(0, 0, 0, 0);
         bottom: 0;
+
+        ~ .theme-icon {
+          content: "";
+          width: 2rem;
+          height: 2rem;
+          position: absolute;
+          top: 0;
+          left: 0;
+          border-radius: 50%;
+
+          &.theme-icon:before {
+            content: "";
+            width: 25px;
+            height: 25px;
+            position: absolute;
+            left: 8px;
+            top: 6px;
+            background-image: url("/assets/icons/sun-icon.png");
+            background-size: 25px 25px;
+            transition: 0.2s;
+          }
+        }
+
+        &:checked {
+          ~ .theme-icon:before {
+            background-color: var(--nightmode-background-color);
+            background-image: url("/assets/icons/moon-icon.png");
+          }
+        }
       }
-      .toggle-theme-input:checked + .toggle-theme-label:after {
-        right: 2px;
-        background: radial-gradient(
-          circle,
-          var(--nightmode-sphere-foreground),
-          var(--nightmode-sphere-background)
-        );
-      }
+      // .toggle-theme-input:checked + .toggle-theme-label:after {
+      //   right: 2px;
+      //   background: radial-gradient(
+      //     circle,
+      //     var(--nightmode-sphere-foreground),
+      //     var(--nightmode-sphere-background)
+      //   );
+      // }
       .toggle-theme-label {
         display: inline-block;
         position: relative;
         height: 2rem;
         width: 4rem;
-        background-color: var(--foreground-color);
         cursor: pointer;
         font-size: 0;
         color: transparent;
         border-radius: 22px;
       }
-      .toggle-theme-label:after {
-        content: "";
-        display: block;
-        height: 1.8rem;
-        width: 1.8rem;
-        position: absolute;
-        top: 2px;
-        right: 2.1rem;
-        border-radius: 50%;
-        backdrop-filter: blur(10px);
-        background: var(--sphere-gradient-colors);
-      }
+
       .toggle-theme-label {
         transition: background-color 500ms ease;
         &:after {
