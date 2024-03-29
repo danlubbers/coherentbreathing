@@ -335,6 +335,31 @@
     background-color: var(--foreground-color);
     overflow-y: auto;
 
+    .close-button {
+      position: absolute;
+      width: 32px;
+      height: 32px;
+      top: 20px;
+      right: 20px;
+      opacity: 0.5;
+    }
+
+    .close-button:before,
+    .close-button:after {
+      content: " ";
+      position: absolute;
+      width: 2px;
+      height: 33px;
+      left: 15px;
+      background-color: var(--background-color);
+    }
+    .close-button:before {
+      transform: rotate(45deg);
+    }
+    .close-button:after {
+      transform: rotate(-45deg);
+    }
+
     .info-modal-logo-wrapper {
       grid-row: 1;
     }
