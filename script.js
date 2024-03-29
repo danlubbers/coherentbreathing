@@ -17,6 +17,8 @@ const audio = document.querySelector("audio");
 const audioInput = document.querySelector(".toggle-audio-input");
 const audioIcon = document.querySelector(".audio-icon");
 const resetBtn = document.querySelector(".reset-btn");
+const infoContainer = document.querySelector(".info-container");
+const infoIcon = document.querySelector(".info-icon");
 const footerContainer = document.querySelector("footer");
 const footerText = document.querySelector(".footer-text");
 const footerLink = document.querySelector(".footer-link");
@@ -64,6 +66,7 @@ toggleThemeInput.addEventListener("click", () => {
     caption.style.color = nightmodeForegroundColor;
     audioIcon.style.backgroundColor = nightmodeForegroundColor;
     resetBtn.style.color = nightmodeForegroundColor;
+    infoIcon.style.fill = nightmodeForegroundColor;
     footerText.style.color = nightmodeForegroundColor;
     footerLink.style.color = nightmodeForegroundColor;
     resetAnimationAndAudio();
@@ -80,6 +83,7 @@ toggleThemeInput.addEventListener("click", () => {
     caption.style.color = foregroundColor;
     audioIcon.style.backgroundColor = foregroundColor;
     resetBtn.style.color = foregroundColor;
+    infoIcon.style.fill = foregroundColor;
     footerText.style.color = foregroundColor;
     footerLink.style.color = foregroundColor;
     resetAnimationAndAudio();
@@ -91,6 +95,7 @@ sphere.addEventListener("click", () => {
     headerContainer.setAttribute("style", "visibility: hidden");
     themeIcon.setAttribute("style", "opacity: 0"); // fixes lag in transition animation
     controlsContainer.setAttribute("style", "visibility: hidden");
+    infoContainer.setAttribute("style", "visibility: hidden");
     footerContainer.setAttribute("style", "visibility: hidden");
     sphere.dataset.state = "play";
     sphere.style.animation = "breath 11s infinite ease-in-out running";
@@ -101,6 +106,7 @@ sphere.addEventListener("click", () => {
     headerContainer.setAttribute("style", "visibility: visible");
     themeIcon.setAttribute("style", "opacity: 1");
     controlsContainer.setAttribute("style", "visibility: visible");
+    infoContainer.setAttribute("style", "visibility: visible");
     footerContainer.setAttribute("style", "visibility: visible");
     sphere.dataset.state = "stop";
     sphere.style.animationPlayState = "paused";
