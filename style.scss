@@ -335,11 +335,11 @@
     background-color: var(--foreground-color);
     overflow-y: auto;
 
-    .info-modal-logo {
+    .info-modal-logo-wrapper {
       grid-row: 1;
     }
 
-    .info-model-paragraphs {
+    .info-model-paragraph-wrapper {
       grid-row: 2;
 
       p {
@@ -347,7 +347,7 @@
       }
     }
 
-    .info-modal-button-container {
+    .info-modal-button-wrapper {
       grid-row: 3;
       align-self: flex-end;
       .info-modal-btn {
