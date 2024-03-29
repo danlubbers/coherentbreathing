@@ -18,6 +18,7 @@ const audioInput = document.querySelector(".toggle-audio-input");
 const audioIcon = document.querySelector(".audio-icon");
 const resetBtn = document.querySelector(".reset-btn");
 const infoModalContainer = document.querySelector(".info-modal-container");
+const infoXBtn = document.querySelector(".info-close-button");
 const infoModalBtn = document.querySelector(".info-modal-btn");
 const infoContainer = document.querySelector(".info-icon-container");
 const infoIcon = document.querySelector(".info-icon");
@@ -129,6 +130,11 @@ infoIcon.addEventListener(
 );
 
 infoModalBtn.addEventListener(
+  "click",
+  () => (infoModalContainer.style.display = "none")
+);
+
+infoXBtn.addEventListener(
   "click",
   () => (infoModalContainer.style.display = "none")
 );
