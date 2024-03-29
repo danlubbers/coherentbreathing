@@ -3,8 +3,8 @@ import checkForIOS from "./isIOS";
 const root = document.documentElement;
 const prompt = checkForIOS();
 const headerContainer = document.querySelector(".header-container");
-const modalContainer = document.querySelector(".modal");
-const modalBtn = document.querySelector(".modal-btn");
+const pwaModalContainer = document.querySelector(".pwa-modal");
+const pwaModalBtn = document.querySelector(".pwa-modal-btn");
 const headerTitle = document.querySelector(".header-title");
 const toggleThemeContainer = document.querySelector(".toggle-theme-container");
 const toggleThemeInput = document.querySelector(".toggle-theme-input");
@@ -25,13 +25,13 @@ const footerLink = document.querySelector(".footer-link");
 
 if (prompt) {
   // Show modal based on IOS and time
-  modalContainer.style.display = "flex";
+  pwaModalContainer.style.display = "flex";
 }
 
 // User closes modal
-modalBtn.addEventListener(
+pwaModalBtn.addEventListener(
   "click",
-  () => (modalContainer.style.display = "none")
+  () => (pwaModalContainer.style.display = "none")
 );
 
 const resetAnimationAndAudio = () => {
