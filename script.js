@@ -17,7 +17,9 @@ const audio = document.querySelector("audio");
 const audioInput = document.querySelector(".toggle-audio-input");
 const audioIcon = document.querySelector(".audio-icon");
 const resetBtn = document.querySelector(".reset-btn");
-const infoContainer = document.querySelector(".info-container");
+const infoModalContainer = document.querySelector(".info-modal-container");
+const infoModalBtn = document.querySelector(".info-modal-btn");
+const infoContainer = document.querySelector(".info-icon-container");
 const infoIcon = document.querySelector(".info-icon");
 const footerContainer = document.querySelector("footer");
 const footerText = document.querySelector(".footer-text");
@@ -120,3 +122,13 @@ audioInput.addEventListener("click", () =>
 );
 
 resetBtn.addEventListener("click", () => resetAnimationAndAudio());
+
+infoIcon.addEventListener(
+  "click",
+  () => (infoModalContainer.style.display = "flex")
+);
+
+infoModalBtn.addEventListener(
+  "click",
+  () => (infoModalContainer.style.display = "none")
+);
