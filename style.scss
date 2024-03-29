@@ -304,6 +304,17 @@
   }
 }
 
+.info-container {
+  width: 110%;
+  display: grid;
+  justify-content: flex-end;
+  align-items: center;
+
+  .info-icon {
+    fill: var(--foreground-color);
+  }
+}
+
 footer {
   .footer-text {
     margin-bottom: 0.6rem;
