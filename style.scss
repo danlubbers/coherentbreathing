@@ -381,6 +381,9 @@
         ol {
           padding: 0 0 0 25px;
           color: var(--background-color);
+          li {
+            margin: 10px 0;
+          }
         }
       }
     }
