@@ -3,8 +3,8 @@ import checkForIOS from "./isIOS";
 const root = document.documentElement;
 const prompt = checkForIOS();
 const headerContainer = document.querySelector(".header-container");
-const modalContainer = document.querySelector(".modal");
-const modalBtn = document.querySelector(".modal-btn");
+const pwaModalContainer = document.querySelector(".pwa-modal");
+const pwaModalBtn = document.querySelector(".pwa-modal-btn");
 const headerTitle = document.querySelector(".header-title");
 const toggleThemeContainer = document.querySelector(".toggle-theme-container");
 const toggleThemeInput = document.querySelector(".toggle-theme-input");
@@ -17,19 +17,24 @@ const audio = document.querySelector("audio");
 const audioInput = document.querySelector(".toggle-audio-input");
 const audioIcon = document.querySelector(".audio-icon");
 const resetBtn = document.querySelector(".reset-btn");
+const infoModalContainer = document.querySelector(".info-modal-container");
+const infoXBtn = document.querySelector(".info-close-button");
+const infoModalBtn = document.querySelector(".info-modal-btn");
+const infoContainer = document.querySelector(".info-icon-container");
+const infoIcon = document.querySelector(".info-icon");
 const footerContainer = document.querySelector("footer");
 const footerText = document.querySelector(".footer-text");
 const footerLink = document.querySelector(".footer-link");
 
 if (prompt) {
   // Show modal based on IOS and time
-  modalContainer.style.display = "flex";
+  pwaModalContainer.style.display = "flex";
 }
 
 // User closes modal
-modalBtn.addEventListener(
+pwaModalBtn.addEventListener(
   "click",
-  () => (modalContainer.style.display = "none")
+  () => (pwaModalContainer.style.display = "none")
 );
 
 const resetAnimationAndAudio = () => {
@@ -64,6 +69,7 @@ toggleThemeInput.addEventListener("click", () => {
     caption.style.color = nightmodeForegroundColor;
     audioIcon.style.backgroundColor = nightmodeForegroundColor;
     resetBtn.style.color = nightmodeForegroundColor;
+    infoIcon.style.fill = nightmodeForegroundColor;
     footerText.style.color = nightmodeForegroundColor;
     footerLink.style.color = nightmodeForegroundColor;
     resetAnimationAndAudio();
@@ -80,6 +86,7 @@ toggleThemeInput.addEventListener("click", () => {
     caption.style.color = foregroundColor;
     audioIcon.style.backgroundColor = foregroundColor;
     resetBtn.style.color = foregroundColor;
+    infoIcon.style.fill = foregroundColor;
     footerText.style.color = foregroundColor;
     footerLink.style.color = foregroundColor;
     resetAnimationAndAudio();
@@ -91,6 +98,7 @@ sphere.addEventListener("click", () => {
     headerContainer.setAttribute("style", "visibility: hidden");
     themeIcon.setAttribute("style", "opacity: 0"); // fixes lag in transition animation
     controlsContainer.setAttribute("style", "visibility: hidden");
+    infoContainer.setAttribute("style", "visibility: hidden");
     footerContainer.setAttribute("style", "visibility: hidden");
     sphere.dataset.state = "play";
     sphere.style.animation = "breath 11s infinite ease-in-out running";
@@ -101,6 +109,7 @@ sphere.addEventListener("click", () => {
     headerContainer.setAttribute("style", "visibility: visible");
     themeIcon.setAttribute("style", "opacity: 1");
     controlsContainer.setAttribute("style", "visibility: visible");
+    infoContainer.setAttribute("style", "visibility: visible");
     footerContainer.setAttribute("style", "visibility: visible");
     sphere.dataset.state = "stop";
     sphere.style.animationPlayState = "paused";
@@ -114,3 +123,18 @@ audioInput.addEventListener("click", () =>
 );
 
 resetBtn.addEventListener("click", () => resetAnimationAndAudio());
+
+infoIcon.addEventListener(
+  "click",
+  () => (infoModalContainer.style.display = "flex")
+);
+
+infoModalBtn.addEventListener(
+  "click",
+  () => (infoModalContainer.style.display = "none")
+);
+
+infoXBtn.addEventListener(
+  "click",
+  () => (infoModalContainer.style.display = "none")
+);
