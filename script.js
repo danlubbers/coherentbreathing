@@ -146,9 +146,12 @@ fiveTwentyEightHZText.addEventListener("click", () => {
   }
 });
 
-audioInput.addEventListener("click", () =>
-  audioInput.checked === true ? (audio.muted = true) : (audio.muted = false)
-);
+audioInput.addEventListener("click", () => {
+  audioInput.checked === true ? (audio.muted = true) : (audio.muted = false);
+  play528hz === true
+    ? (fiveTwentyEightHZ.muted = true)
+    : (fiveTwentyEightHZ.muted = false);
+});
 
 resetBtn.addEventListener("click", () => resetAnimationAndAudio());
 
