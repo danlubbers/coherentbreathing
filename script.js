@@ -128,7 +128,6 @@ sphere.addEventListener("click", () => {
     caption.style.setProperty("--animation", "running");
     gong.play();
     if (play528hz) {
-      fiveTwentyEightHZ.volume = 0.03;
       fiveTwentyEightHZ.play();
     }
   } else if (sphere.dataset.state === "play") {
