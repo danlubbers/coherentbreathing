@@ -58,6 +58,11 @@ const resetAnimationAndAudio = () => {
   sphere.style.animation = "paused"; // resets animation
   caption.style.setProperty("--animation-name", "paused"); // resets pseud-element animation
 
+  if (play528hz) {
+    fiveTwentyEightHZ.pause();
+    fiveTwentyEightHZ.currentTime = 0;
+  }
+
   gong.pause();
   gong.currentTime = 0; // reset audio to beginning
 };
