@@ -1,5 +1,16 @@
 import checkForIOS from "./isIOS";
 
+// Color Theme
+const foregroundColor = "#eee";
+const backgroundColor = "#222";
+const sphereForegroundColor = "#13eb86";
+const sphereBackgroundColor = "#1693e6";
+// Night Color Theme
+const nightmodeForegroundColor = "#ff7c7c";
+const nightmodeBackgroundColor = "#1c0d0d";
+const nightmodeSphereForegroundColor = "#d85349";
+const nightmodeSphereBackgroundColor = "#330801";
+
 const root = document.documentElement;
 const prompt = checkForIOS();
 const headerContainer = document.querySelector(".header-container");
@@ -12,12 +23,10 @@ const themeIcon = document.querySelector(".theme-icon");
 const sphere = document.querySelector(".sphere");
 const caption = document.querySelector(".caption");
 const gong = document.querySelector("#gong");
-const fiveHundredTwentyEightHZ = document.querySelector(
-  "#fiveHundredTwentyEightHZ"
-);
+const fiveTwentyEightHZ = document.querySelector("#five-twenty-eight-hz");
 const controlsContainer = document.querySelector(".controls-container");
-const fiveHundredTwentyEightHZBtn = document.querySelector(
-  ".five-twenty-eight-hz"
+const fiveTwentyEightHZText = document.querySelector(
+  ".five-twenty-eight-hz-text"
 );
 const audio = document.querySelector("audio");
 const audioInput = document.querySelector(".toggle-audio-input");
@@ -54,17 +63,6 @@ const resetAnimationAndAudio = () => {
 };
 
 toggleThemeInput.addEventListener("click", () => {
-  // Color Theme
-  const foregroundColor = "#eee";
-  const backgroundColor = "#222";
-  const sphereForegroundColor = "#13eb86";
-  const sphereBackgroundColor = "#1693e6";
-  // Night Color Theme
-  const nightmodeForegroundColor = "#ff7c7c";
-  const nightmodeBackgroundColor = "#1c0d0d";
-  const nightmodeSphereForegroundColor = "#d85349";
-  const nightmodeSphereBackgroundColor = "#330801";
-
   if (toggleThemeInput.checked) {
     toggleThemeInput.checked = true;
     root.style.backgroundColor = nightmodeBackgroundColor;
@@ -114,8 +112,8 @@ sphere.addEventListener("click", () => {
     caption.style.setProperty("--animation", "running");
     gong.play();
     if (play528hz) {
-      fiveHundredTwentyEightHZ.volume = 0.03;
-      fiveHundredTwentyEightHZ.play();
+      fiveTwentyEightHZ.volume = 0.03;
+      fiveTwentyEightHZ.play();
     }
   } else if (sphere.dataset.state === "play") {
     headerContainer.setAttribute("style", "visibility: visible");
@@ -128,13 +126,19 @@ sphere.addEventListener("click", () => {
     caption.style.setProperty("--animation", "paused");
     gong.pause();
     if (play528hz) {
-      fiveHundredTwentyEightHZ.pause();
+      fiveTwentyEightHZ.pause();
     }
   }
 });
 
-fiveHundredTwentyEightHZBtn.addEventListener("click", () => {
+fiveTwentyEightHZText.addEventListener("click", () => {
   play528hz = !play528hz;
+  if (play528hz) {
+    fiveTwentyEightHZText.style.color = sphereForegroundColor;
+  }
+  if (!play528hz) {
+    fiveTwentyEightHZText.style.color = foregroundColor;
+  }
 });
 
 audioInput.addEventListener("click", () =>
