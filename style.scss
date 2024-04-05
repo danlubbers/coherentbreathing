@@ -245,6 +245,11 @@
   align-items: center;
   color: var(--foreground-color);
 
+  .solfeggio-container {
+    .five-twenty-eight-hz {
+    }
+  }
+
   section {
     margin-bottom: 1rem;
     .toggle-audio-container {

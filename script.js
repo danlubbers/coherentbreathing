@@ -16,6 +16,9 @@ const fiveHundredTwentyEightHZ = document.querySelector(
   "#fiveHundredTwentyEightHZ"
 );
 const controlsContainer = document.querySelector(".controls-container");
+const fiveHundredTwentyEightHZBtn = document.querySelector(
+  ".five-twenty-eight-hz"
+);
 const audio = document.querySelector("audio");
 const audioInput = document.querySelector(".toggle-audio-input");
 const audioIcon = document.querySelector(".audio-icon");
@@ -28,6 +31,8 @@ const infoIcon = document.querySelector(".info-icon");
 const footerContainer = document.querySelector("footer");
 const footerText = document.querySelector(".footer-text");
 const footerLink = document.querySelector(".footer-link");
+
+let play528hz = false;
 
 if (prompt) {
   // Show modal based on IOS and time
@@ -108,8 +113,10 @@ sphere.addEventListener("click", () => {
     caption.style.setProperty("--animation-name", "sphere-caption");
     caption.style.setProperty("--animation", "running");
     gong.play();
-    fiveHundredTwentyEightHZ.volume = 0.03;
-    fiveHundredTwentyEightHZ.play();
+    if (play528hz) {
+      fiveHundredTwentyEightHZ.volume = 0.03;
+      fiveHundredTwentyEightHZ.play();
+    }
   } else if (sphere.dataset.state === "play") {
     headerContainer.setAttribute("style", "visibility: visible");
     themeIcon.setAttribute("style", "opacity: 1");
@@ -120,8 +127,14 @@ sphere.addEventListener("click", () => {
     sphere.style.animationPlayState = "paused";
     caption.style.setProperty("--animation", "paused");
     gong.pause();
-    fiveHundredTwentyEightHZ.pause();
+    if (play528hz) {
+      fiveHundredTwentyEightHZ.pause();
+    }
   }
+});
+
+fiveHundredTwentyEightHZBtn.addEventListener("click", () => {
+  play528hz = !play528hz;
 });
 
 audioInput.addEventListener("click", () =>
