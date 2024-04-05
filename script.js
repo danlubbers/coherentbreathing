@@ -23,8 +23,8 @@ const themeIcon = document.querySelector(".theme-icon");
 const sphere = document.querySelector(".sphere");
 const caption = document.querySelector(".caption");
 const gong = document.querySelector("#gong");
-const fiveTwentyEightHZ = document.querySelector("#five-twenty-eight-hz");
 const controlsContainer = document.querySelector(".controls-container");
+const fiveTwentyEightHZ = document.querySelector("#five-twenty-eight-hz");
 const fiveTwentyEightHZText = document.querySelector(
   ".five-twenty-eight-hz-text"
 );
@@ -78,6 +78,11 @@ toggleThemeInput.addEventListener("click", () => {
       `radial-gradient(circle, ${nightmodeSphereForegroundColor}, ${nightmodeSphereBackgroundColor})`
     );
     caption.style.color = nightmodeForegroundColor;
+
+    fiveTwentyEightHZText.style.color = nightmodeForegroundColor;
+    if (play528hz) {
+      fiveTwentyEightHZText.style.color = nightmodeSphereForegroundColor;
+    }
     audioIcon.style.backgroundColor = nightmodeForegroundColor;
     resetBtn.style.color = nightmodeForegroundColor;
     infoIcon.style.fill = nightmodeForegroundColor;
@@ -95,6 +100,12 @@ toggleThemeInput.addEventListener("click", () => {
       `radial-gradient(circle, ${sphereForegroundColor}, ${sphereBackgroundColor})`
     );
     caption.style.color = foregroundColor;
+
+    fiveTwentyEightHZText.style.color = foregroundColor;
+    if (play528hz) {
+      fiveTwentyEightHZText.style.color = sphereForegroundColor;
+    }
+
     audioIcon.style.backgroundColor = foregroundColor;
     resetBtn.style.color = foregroundColor;
     infoIcon.style.fill = foregroundColor;
@@ -140,9 +151,15 @@ fiveTwentyEightHZText.addEventListener("click", () => {
   play528hz = !play528hz;
   if (play528hz) {
     fiveTwentyEightHZText.style.color = sphereForegroundColor;
+    if (toggleThemeInput.checked) {
+      fiveTwentyEightHZText.style.color = nightmodeSphereForegroundColor;
+    }
   }
   if (!play528hz) {
     fiveTwentyEightHZText.style.color = foregroundColor;
+    if (toggleThemeInput.checked) {
+      fiveTwentyEightHZText.style.color = nightmodeForegroundColor;
+    }
   }
 });
 
