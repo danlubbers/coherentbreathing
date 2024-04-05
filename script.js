@@ -12,6 +12,9 @@ const themeIcon = document.querySelector(".theme-icon");
 const sphere = document.querySelector(".sphere");
 const caption = document.querySelector(".caption");
 const gong = document.querySelector("#gong");
+const fiveHundredTwentyEightHZ = document.querySelector(
+  "#fiveHundredTwentyEightHZ"
+);
 const controlsContainer = document.querySelector(".controls-container");
 const audio = document.querySelector("audio");
 const audioInput = document.querySelector(".toggle-audio-input");
@@ -105,6 +108,8 @@ sphere.addEventListener("click", () => {
     caption.style.setProperty("--animation-name", "sphere-caption");
     caption.style.setProperty("--animation", "running");
     gong.play();
+    fiveHundredTwentyEightHZ.volume = 0.03;
+    fiveHundredTwentyEightHZ.play();
   } else if (sphere.dataset.state === "play") {
     headerContainer.setAttribute("style", "visibility: visible");
     themeIcon.setAttribute("style", "opacity: 1");
@@ -115,6 +120,7 @@ sphere.addEventListener("click", () => {
     sphere.style.animationPlayState = "paused";
     caption.style.setProperty("--animation", "paused");
     gong.pause();
+    fiveHundredTwentyEightHZ.pause();
   }
 });
 
