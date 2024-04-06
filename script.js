@@ -29,7 +29,6 @@ const audio = document.querySelector("audio");
 const audioInput = document.querySelector(".toggle-audio-input");
 const audioIcon = document.querySelector(".audio-icon");
 const resetBtn = document.querySelector(".reset-btn");
-console.log("resetBtn", resetBtn);
 const infoModalContainer = document.querySelector(".info-modal-container");
 const infoXBtn = document.querySelector(".info-close-button");
 const infoModalBtn = document.querySelector(".info-modal-btn");
