@@ -42,8 +42,7 @@ const infoIcon = document.querySelector(".info-icon");
 const footerContainer = document.querySelector("footer");
 const footerText = document.querySelector(".footer-text");
 const footerLink = document.querySelector(".footer-link");
-
-let play528hz = false;
+let solfeggioFrequency = "";
 
 if (prompt) {
   // Show modal based on IOS and time
@@ -60,7 +59,7 @@ const resetAnimationAndAudio = () => {
   sphere.style.animation = "paused"; // resets animation
   caption.style.setProperty("--animation-name", "paused"); // resets pseud-element animation
 
-  if (play528hz) {
+  if (solfeggioFrequency) {
     fiveTwentyEightHZAudio.pause();
     fiveTwentyEightHZAudio.currentTime = 0;
   }
@@ -122,7 +121,7 @@ sphere.addEventListener("click", () => {
     caption.style.setProperty("--animation-name", "sphere-caption");
     caption.style.setProperty("--animation", "running");
     gong.play();
-    if (play528hz) {
+    if (solfeggioFrequency) {
       fiveTwentyEightHZAudio.play();
     }
   } else if (sphere.dataset.state === "play") {
@@ -135,15 +134,20 @@ sphere.addEventListener("click", () => {
     sphere.style.animationPlayState = "paused";
     caption.style.setProperty("--animation", "paused");
     gong.pause();
-    if (play528hz) {
+    if (solfeggioFrequency) {
       fiveTwentyEightHZAudio.pause();
     }
   }
 });
 
+solfeggioDropdownMenu.addEventListener("click", () => {
+  solfeggioFrequency = solfeggioDropdownMenu.value;
+  console.log("solfeggioFrequency", solfeggioFrequency);
+});
+
 audioInput.addEventListener("click", () => {
   audioInput.checked === true ? (audio.muted = true) : (audio.muted = false);
-  play528hz === true
+  solfeggioFrequency === true
     ? (fiveTwentyEightHZAudio.muted = true)
     : (fiveTwentyEightHZAudio.muted = false);
 });
