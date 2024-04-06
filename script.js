@@ -16,6 +16,9 @@ const prompt = checkForIOS();
 const headerContainer = document.querySelector(".header-container");
 const pwaModalContainer = document.querySelector(".pwa-modal");
 const pwaModalBtn = document.querySelector(".pwa-modal-btn");
+const infoModalContainer = document.querySelector(".info-modal-container");
+const infoXBtn = document.querySelector(".info-close-button");
+const infoModalBtn = document.querySelector(".info-modal-btn");
 const headerTitle = document.querySelector(".header-title");
 const toggleThemeContainer = document.querySelector(".toggle-theme-container");
 const toggleThemeInput = document.querySelector(".toggle-theme-input");
@@ -24,14 +27,16 @@ const sphere = document.querySelector(".sphere");
 const caption = document.querySelector(".caption");
 const gong = document.querySelector("#gong");
 const controlsContainer = document.querySelector(".controls-container");
-const fiveTwentyEightHZ = document.querySelector("#five-twenty-eight-hz");
+const fiveTwentyEightHZAudio = document.querySelector(
+  "#five-twenty-eight-hz-audio"
+);
 const audio = document.querySelector("audio");
+// const solfeggioContainer = document.querySelector(".solfeggio-container");
+const solfeggioTitle = document.querySelector(".solfeggio-title");
+const solfeggioDropdownMenu = document.querySelector("#solfeggio-dropdown");
 const audioInput = document.querySelector(".toggle-audio-input");
 const audioIcon = document.querySelector(".audio-icon");
 const resetBtn = document.querySelector(".reset-btn");
-const infoModalContainer = document.querySelector(".info-modal-container");
-const infoXBtn = document.querySelector(".info-close-button");
-const infoModalBtn = document.querySelector(".info-modal-btn");
 const infoContainer = document.querySelector(".info-icon-container");
 const infoIcon = document.querySelector(".info-icon");
 const footerContainer = document.querySelector("footer");
@@ -56,8 +61,8 @@ const resetAnimationAndAudio = () => {
   caption.style.setProperty("--animation-name", "paused"); // resets pseud-element animation
 
   if (play528hz) {
-    fiveTwentyEightHZ.pause();
-    fiveTwentyEightHZ.currentTime = 0;
+    fiveTwentyEightHZAudio.pause();
+    fiveTwentyEightHZAudio.currentTime = 0;
   }
 
   gong.pause();
@@ -75,6 +80,8 @@ toggleThemeInput.addEventListener("click", () => {
       `radial-gradient(circle, ${nightmodeSphereForegroundColor}, ${nightmodeSphereBackgroundColor})`
     );
     caption.style.color = nightmodeForegroundColor;
+    solfeggioTitle.style.color = nightmodeForegroundColor;
+    solfeggioDropdownMenu.style.color = nightmodeForegroundColor;
     audioIcon.style.backgroundColor = nightmodeForegroundColor;
     resetBtn.style.color = nightmodeForegroundColor;
     infoIcon.style.fill = nightmodeForegroundColor;
@@ -92,6 +99,8 @@ toggleThemeInput.addEventListener("click", () => {
       `radial-gradient(circle, ${sphereForegroundColor}, ${sphereBackgroundColor})`
     );
     caption.style.color = foregroundColor;
+    solfeggioTitle.style.color = foregroundColor;
+    solfeggioDropdownMenu.style.color = foregroundColor;
     audioIcon.style.backgroundColor = foregroundColor;
     resetBtn.style.color = foregroundColor;
     infoIcon.style.fill = foregroundColor;
@@ -114,7 +123,7 @@ sphere.addEventListener("click", () => {
     caption.style.setProperty("--animation", "running");
     gong.play();
     if (play528hz) {
-      fiveTwentyEightHZ.play();
+      fiveTwentyEightHZAudio.play();
     }
   } else if (sphere.dataset.state === "play") {
     headerContainer.setAttribute("style", "visibility: visible");
@@ -127,7 +136,7 @@ sphere.addEventListener("click", () => {
     caption.style.setProperty("--animation", "paused");
     gong.pause();
     if (play528hz) {
-      fiveTwentyEightHZ.pause();
+      fiveTwentyEightHZAudio.pause();
     }
   }
 });
@@ -135,8 +144,8 @@ sphere.addEventListener("click", () => {
 audioInput.addEventListener("click", () => {
   audioInput.checked === true ? (audio.muted = true) : (audio.muted = false);
   play528hz === true
-    ? (fiveTwentyEightHZ.muted = true)
-    : (fiveTwentyEightHZ.muted = false);
+    ? (fiveTwentyEightHZAudio.muted = true)
+    : (fiveTwentyEightHZAudio.muted = false);
 });
 
 resetBtn.addEventListener("click", () => resetAnimationAndAudio());
