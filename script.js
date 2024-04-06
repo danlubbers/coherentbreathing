@@ -31,7 +31,7 @@ const fiveTwentyEightHZAudio = document.querySelector(
   "#five-twenty-eight-hz-audio"
 );
 const audio = document.querySelector("audio");
-// const solfeggioContainer = document.querySelector(".solfeggio-container");
+const solfeggioContainer = document.querySelector(".solfeggio-container");
 const solfeggioTitle = document.querySelector(".solfeggio-title");
 const solfeggioDropdownMenu = document.querySelector("#solfeggio-dropdown");
 const audioInput = document.querySelector(".toggle-audio-input");
@@ -114,6 +114,7 @@ sphere.addEventListener("click", () => {
   if (sphere.dataset.state === "stop") {
     headerContainer.setAttribute("style", "visibility: hidden");
     themeIcon.setAttribute("style", "opacity: 0"); // fixes lag in transition animation
+    solfeggioContainer.setAttribute("style", "visibility: hidden");
     controlsContainer.setAttribute("style", "visibility: hidden");
     infoContainer.setAttribute("style", "visibility: hidden");
     footerContainer.setAttribute("style", "visibility: hidden");
@@ -129,6 +130,7 @@ sphere.addEventListener("click", () => {
   } else if (sphere.dataset.state === "play") {
     headerContainer.setAttribute("style", "visibility: visible");
     themeIcon.setAttribute("style", "opacity: 1");
+    solfeggioContainer.setAttribute("style", "visibility: visible");
     controlsContainer.setAttribute("style", "visibility: visible");
     infoContainer.setAttribute("style", "visibility: visible");
     footerContainer.setAttribute("style", "visibility: visible");
