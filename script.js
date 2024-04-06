@@ -25,13 +25,11 @@ const caption = document.querySelector(".caption");
 const gong = document.querySelector("#gong");
 const controlsContainer = document.querySelector(".controls-container");
 const fiveTwentyEightHZ = document.querySelector("#five-twenty-eight-hz");
-const fiveTwentyEightHZText = document.querySelector(
-  ".five-twenty-eight-hz-text"
-);
 const audio = document.querySelector("audio");
 const audioInput = document.querySelector(".toggle-audio-input");
 const audioIcon = document.querySelector(".audio-icon");
 const resetBtn = document.querySelector(".reset-btn");
+console.log("resetBtn", resetBtn);
 const infoModalContainer = document.querySelector(".info-modal-container");
 const infoXBtn = document.querySelector(".info-close-button");
 const infoModalBtn = document.querySelector(".info-modal-btn");
@@ -78,11 +76,6 @@ toggleThemeInput.addEventListener("click", () => {
       `radial-gradient(circle, ${nightmodeSphereForegroundColor}, ${nightmodeSphereBackgroundColor})`
     );
     caption.style.color = nightmodeForegroundColor;
-
-    fiveTwentyEightHZText.style.color = nightmodeForegroundColor;
-    if (play528hz) {
-      fiveTwentyEightHZText.style.color = nightmodeSphereForegroundColor;
-    }
     audioIcon.style.backgroundColor = nightmodeForegroundColor;
     resetBtn.style.color = nightmodeForegroundColor;
     infoIcon.style.fill = nightmodeForegroundColor;
@@ -100,12 +93,6 @@ toggleThemeInput.addEventListener("click", () => {
       `radial-gradient(circle, ${sphereForegroundColor}, ${sphereBackgroundColor})`
     );
     caption.style.color = foregroundColor;
-
-    fiveTwentyEightHZText.style.color = foregroundColor;
-    if (play528hz) {
-      fiveTwentyEightHZText.style.color = sphereForegroundColor;
-    }
-
     audioIcon.style.backgroundColor = foregroundColor;
     resetBtn.style.color = foregroundColor;
     infoIcon.style.fill = foregroundColor;
@@ -142,22 +129,6 @@ sphere.addEventListener("click", () => {
     gong.pause();
     if (play528hz) {
       fiveTwentyEightHZ.pause();
-    }
-  }
-});
-
-fiveTwentyEightHZText.addEventListener("click", () => {
-  play528hz = !play528hz;
-  if (play528hz) {
-    fiveTwentyEightHZText.style.color = sphereForegroundColor;
-    if (toggleThemeInput.checked) {
-      fiveTwentyEightHZText.style.color = nightmodeSphereForegroundColor;
-    }
-  }
-  if (!play528hz) {
-    fiveTwentyEightHZText.style.color = foregroundColor;
-    if (toggleThemeInput.checked) {
-      fiveTwentyEightHZText.style.color = nightmodeForegroundColor;
     }
   }
 });
