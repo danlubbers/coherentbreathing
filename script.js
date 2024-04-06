@@ -59,6 +59,7 @@ const resetAnimationAndAudio = () => {
   sphere.style.animation = "paused"; // resets animation
   caption.style.setProperty("--animation-name", "paused"); // resets pseud-element animation
 
+  // Will need to convert to switch statement and put in separate function for all frequencies
   if (solfeggioFrequency) {
     fiveTwentyEightHZAudio.pause();
     fiveTwentyEightHZAudio.currentTime = 0;
@@ -121,7 +122,8 @@ sphere.addEventListener("click", () => {
     caption.style.setProperty("--animation-name", "sphere-caption");
     caption.style.setProperty("--animation", "running");
     gong.play();
-    if (solfeggioFrequency) {
+    // Will need to convert to switch statement and put in separate function for all frequencies
+    if (solfeggioFrequency === "528hz") {
       fiveTwentyEightHZAudio.play();
     }
   } else if (sphere.dataset.state === "play") {
@@ -134,7 +136,8 @@ sphere.addEventListener("click", () => {
     sphere.style.animationPlayState = "paused";
     caption.style.setProperty("--animation", "paused");
     gong.pause();
-    if (solfeggioFrequency) {
+    // Will need to convert to switch statement and put in separate function for all frequencies
+    if (solfeggioFrequency === "528hz") {
       fiveTwentyEightHZAudio.pause();
     }
   }
@@ -147,9 +150,9 @@ solfeggioDropdownMenu.addEventListener("click", () => {
 
 audioInput.addEventListener("click", () => {
   audioInput.checked === true ? (audio.muted = true) : (audio.muted = false);
-  solfeggioFrequency === true
-    ? (fiveTwentyEightHZAudio.muted = true)
-    : (fiveTwentyEightHZAudio.muted = false);
+  // solfeggioFrequency === true
+  //   ? (fiveTwentyEightHZAudio.muted = true)
+  //   : (fiveTwentyEightHZAudio.muted = false);
 });
 
 resetBtn.addEventListener("click", () => resetAnimationAndAudio());
