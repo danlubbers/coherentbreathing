@@ -30,8 +30,27 @@ const controlsContainer = document.querySelector(".controls-container");
 const oneSeventyFourHZAudio = document.querySelector(
   "#one-seventy-four-hz-audio"
 );
+const twoEightyFiveHZAudio = document.querySelector(
+  "#two-eighty-five-hz-audio"
+);
+const threeNinetySixHZAudio = document.querySelector(
+  "#three-ninety-six-hz-audio"
+);
+const fourSeventeenHZAudio = document.querySelector("#four-seventeen-hz-audio");
 const fiveTwentyEightHZAudio = document.querySelector(
   "#five-twenty-eight-hz-audio"
+);
+const sixThirtyNineHZAudio = document.querySelector(
+  "#six-thirty-nine-hz-audio"
+);
+const seventFortyOneHZAudio = document.querySelector(
+  "#seven-forty-one-hz-audio"
+);
+const eightFiftyTwoHZAudio = document.querySelector(
+  "#eight-fifty-two-hz-audio"
+);
+const nineSixtyThreeHZAudio = document.querySelector(
+  "#nine-sixty-three-hz-audio"
 );
 const audio = document.querySelector("audio");
 const solfeggioContainer = document.querySelector(".solfeggio-container");
@@ -61,6 +80,8 @@ pwaModalBtn.addEventListener(
 const resetAnimationAndAudio = () => {
   sphere.style.animation = "paused"; // resets animation
   caption.style.setProperty("--animation-name", "paused"); // resets pseud-element animation
+
+  // RESET solfeggio to "none"
 
   // Will need to convert to switch statement and put in separate function for all frequencies
   if (solfeggioFrequency) {
@@ -126,20 +147,38 @@ sphere.addEventListener("click", () => {
     caption.style.setProperty("--animation-name", "sphere-caption");
     caption.style.setProperty("--animation", "running");
     gong.play();
-    // Will need to convert to switch statement and put in separate function for all frequencies
+
     switch (solfeggioFrequency) {
       case "174hz":
-        console.log("solfeggioFrequency", solfeggioFrequency);
         oneSeventyFourHZAudio.play();
         break;
+      case "285hz":
+        twoEightyFiveHZAudio.play();
+        break;
+      case "396hz":
+        threeNinetySixHZAudio.play();
+        break;
+      case "417hz":
+        fourSeventeenHZAudio.play();
+        break;
       case "528hz":
-        console.log("solfeggioFrequency", solfeggioFrequency);
         fiveTwentyEightHZAudio.play();
         break;
+      case "639hz":
+        sixThirtyNineHZAudio.play();
+        break;
+      case "741hz":
+        seventFortyOneHZAudio.play();
+        break;
+      case "852hz":
+        eightFiftyTwoHZAudio.play();
+        break;
+      case "963hz":
+        nineSixtyThreeHZAudio.play();
+        break;
+      default:
+        return "";
     }
-
-    // if (solfeggioFrequency === "528hz") {
-    // }
   } else if (sphere.dataset.state === "play") {
     headerContainer.setAttribute("style", "visibility: visible");
     themeIcon.setAttribute("style", "opacity: 1");
@@ -151,16 +190,37 @@ sphere.addEventListener("click", () => {
     sphere.style.animationPlayState = "paused";
     caption.style.setProperty("--animation", "paused");
     gong.pause();
-    // Will need to convert to switch statement and put in separate function for all frequencies
+
     switch (solfeggioFrequency) {
       case "174hz":
-        console.log("solfeggioFrequency", solfeggioFrequency);
         oneSeventyFourHZAudio.pause();
         break;
+      case "285hz":
+        twoEightyFiveHZAudio.pause();
+        break;
+      case "396hz":
+        threeNinetySixHZAudio.pause();
+        break;
+      case "417hz":
+        fourSeventeenHZAudio.pause();
+        break;
       case "528hz":
-        console.log("solfeggioFrequency", solfeggioFrequency);
         fiveTwentyEightHZAudio.pause();
         break;
+      case "639hz":
+        sixThirtyNineHZAudio.pause();
+        break;
+      case "741hz":
+        seventFortyOneHZAudio.pause();
+        break;
+      case "852hz":
+        eightFiftyTwoHZAudio.pause();
+        break;
+      case "963hz":
+        nineSixtyThreeHZAudio.pause();
+        break;
+      default:
+        return "";
     }
   }
 });
@@ -171,24 +231,18 @@ solfeggioDropdownMenu.addEventListener("change", () => {
 
 audioInput.addEventListener("click", () => {
   audioInput.checked === true ? (audio.muted = true) : (audio.muted = false);
-  // solfeggioFrequency === true
-  //   ? (fiveTwentyEightHZAudio.muted = true)
-  //   : (fiveTwentyEightHZAudio.muted = false);
 });
 
 resetBtn.addEventListener("click", () => resetAnimationAndAudio());
 
-infoIcon.addEventListener(
-  "click",
-  () => (infoModalContainer.style.display = "flex")
-);
+infoIcon.addEventListener("click", () => {
+  infoModalContainer.style.display = "flex";
+});
 
-infoModalBtn.addEventListener(
-  "click",
-  () => (infoModalContainer.style.display = "none")
-);
+infoModalBtn.addEventListener("click", () => {
+  infoModalContainer.style.display = "none";
+});
 
-infoXBtn.addEventListener(
-  "click",
-  () => (infoModalContainer.style.display = "none")
-);
+infoXBtn.addEventListener("click", () => {
+  infoModalContainer.style.display = "none";
+});
