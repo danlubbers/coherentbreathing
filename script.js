@@ -27,6 +27,9 @@ const sphere = document.querySelector(".sphere");
 const caption = document.querySelector(".caption");
 const gong = document.querySelector("#gong");
 const controlsContainer = document.querySelector(".controls-container");
+const oneSeventyFourHZAudio = document.querySelector(
+  "#one-seventy-four-hz-audio"
+);
 const fiveTwentyEightHZAudio = document.querySelector(
   "#five-twenty-eight-hz-audio"
 );
@@ -124,9 +127,19 @@ sphere.addEventListener("click", () => {
     caption.style.setProperty("--animation", "running");
     gong.play();
     // Will need to convert to switch statement and put in separate function for all frequencies
-    if (solfeggioFrequency === "528hz") {
-      fiveTwentyEightHZAudio.play();
+    switch (solfeggioFrequency) {
+      case "174hz":
+        console.log("solfeggioFrequency", solfeggioFrequency);
+        oneSeventyFourHZAudio.play();
+        break;
+      case "528hz":
+        console.log("solfeggioFrequency", solfeggioFrequency);
+        fiveTwentyEightHZAudio.play();
+        break;
     }
+
+    // if (solfeggioFrequency === "528hz") {
+    // }
   } else if (sphere.dataset.state === "play") {
     headerContainer.setAttribute("style", "visibility: visible");
     themeIcon.setAttribute("style", "opacity: 1");
@@ -139,15 +152,21 @@ sphere.addEventListener("click", () => {
     caption.style.setProperty("--animation", "paused");
     gong.pause();
     // Will need to convert to switch statement and put in separate function for all frequencies
-    if (solfeggioFrequency === "528hz") {
-      fiveTwentyEightHZAudio.pause();
+    switch (solfeggioFrequency) {
+      case "174hz":
+        console.log("solfeggioFrequency", solfeggioFrequency);
+        oneSeventyFourHZAudio.pause();
+        break;
+      case "528hz":
+        console.log("solfeggioFrequency", solfeggioFrequency);
+        fiveTwentyEightHZAudio.pause();
+        break;
     }
   }
 });
 
-solfeggioDropdownMenu.addEventListener("click", () => {
+solfeggioDropdownMenu.addEventListener("change", () => {
   solfeggioFrequency = solfeggioDropdownMenu.value;
-  console.log("solfeggioFrequency", solfeggioFrequency);
 });
 
 audioInput.addEventListener("click", () => {
