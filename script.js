@@ -19,6 +19,11 @@ const pwaModalBtn = document.querySelector(".pwa-modal-btn");
 const infoModalContainer = document.querySelector(".info-modal-container");
 const infoXBtn = document.querySelector(".info-close-button");
 const infoModalBtn = document.querySelector(".info-modal-btn");
+const solfeggioModalContainer = document.querySelector(
+  ".solfeggio-modal-container"
+);
+const solfeggioXBtn = document.querySelector(".solfeggio-close-button");
+const solfeggioModalBtn = document.querySelector(".solfeggio-modal-btn");
 const headerTitle = document.querySelector(".header-title");
 const toggleThemeContainer = document.querySelector(".toggle-theme-container");
 const toggleThemeInput = document.querySelector(".toggle-theme-input");
@@ -227,6 +232,18 @@ sphere.addEventListener("click", () => {
   }
 });
 
+solfeggioTitle.addEventListener("click", () => {
+  solfeggioModalContainer.style.display = "flex";
+});
+
+solfeggioXBtn.addEventListener("click", () => {
+  solfeggioModalContainer.style.display = "none";
+});
+
+solfeggioModalBtn.addEventListener("click", () => {
+  solfeggioModalContainer.style.display = "none";
+});
+
 solfeggioDropdownMenu.addEventListener("change", () => {
   solfeggioFrequency = solfeggioDropdownMenu.value;
 });
@@ -241,10 +258,10 @@ infoIcon.addEventListener("click", () => {
   infoModalContainer.style.display = "flex";
 });
 
-infoModalBtn.addEventListener("click", () => {
+infoXBtn.addEventListener("click", () => {
   infoModalContainer.style.display = "none";
 });
 
-infoXBtn.addEventListener("click", () => {
+infoModalBtn.addEventListener("click", () => {
   infoModalContainer.style.display = "none";
 });
