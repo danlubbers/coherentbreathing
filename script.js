@@ -141,6 +141,7 @@ sphere.addEventListener("click", () => {
     solfeggioContainer.setAttribute("style", "visibility: hidden");
     controlsContainer.setAttribute("style", "visibility: hidden");
     infoContainer.setAttribute("style", "visibility: hidden");
+    audioIcon.setAttribute("style", "opacity: 0"); // fixes lag in transition animation
     footerContainer.setAttribute("style", "visibility: hidden");
     sphere.dataset.state = "play";
     sphere.style.animation = "breath 11s infinite ease-in-out running";
@@ -185,6 +186,7 @@ sphere.addEventListener("click", () => {
     solfeggioContainer.setAttribute("style", "visibility: visible");
     controlsContainer.setAttribute("style", "visibility: visible");
     infoContainer.setAttribute("style", "visibility: visible");
+    audioIcon.setAttribute("style", "opacity: 1");
     footerContainer.setAttribute("style", "visibility: visible");
     sphere.dataset.state = "stop";
     sphere.style.animationPlayState = "paused";
