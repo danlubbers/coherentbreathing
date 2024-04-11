@@ -159,59 +159,6 @@
           <button class="pwa-modal-btn">close</button>
         </div>
       </div>
-      <div class="header-container">
-        <h1 class="header-title">Coherent Breathing</h1>
-        <section>
-          <div class="toggle-theme-container">
-            <input
-              id="toggle-theme"
-              class="toggle-theme-input"
-              type="checkbox"
-            />
-            <div class="theme-icon"></div>
-            <label for="toggle-theme" class="toggle-theme-label">Select</label>
-          </div>
-        </section>
-      </div>
-      <div class="sphere-container">
-        <figure class="sphere" data-state="stop">
-          <figcaption class="caption" />
-        </figure>
-        <audio
-          loop
-          id="gong"
-          src="https://s3.amazonaws.com/content.danlubbers.com/audio/coherent_breathing_45min.mp3"
-          preload="auto"
-        >
-          Your browser does not support the <code>audio</code> element.
-        </audio>
-        <audio
-          loop
-          id="five-twenty-eight-hz"
-          src="https://s3.amazonaws.com/content.danlubbers.com/audio/528hz_15min_decrease_vol_25.mp3"
-          preload="auto"
-        >
-          Your browser does not support the <code>audio</code> element.
-        </audio>
-      </div>
-      <div class="controls-container">
-        <div class="solfeggio-container">
-          <p class="five-twenty-eight-hz-text">528hz</p>
-        </div>
-        <section>
-          <div class="toggle-audio-container">
-            <input
-              id="toggle-audio"
-              class="toggle-audio-input"
-              type="checkbox"
-            />
-            <div class="audio-icon"></div>
-            <label for="toggle-audio" class="toggle-audio-label">Select</label>
-          </div>
-        </section>
-        <button class="reset-btn">Reset</button>
-      </div>
-
       <div class="info-modal-container">
         <div class="info-modal-content">
           <div class="info-close-button"></div>
@@ -222,7 +169,8 @@
               height="150"
             />
           </div>
-          <div class="info-model-paragraph-wrapper">
+
+          <div class="info-modal-paragraph-wrapper">
             <p class="paragraph-one">
               Coherent breathing, also known as resonant breathing, is a type of
               breathing that involves taking five to six breaths per minute,
@@ -251,6 +199,21 @@
                   Create a comfortable, relaxed seated position with a straight
                   spine.
                 </li>
+                <li>
+                  If you are using this at night, tap the sun icon to shift the
+                  theme to nightmode which will decrease the amount of blue
+                  light emitted from the screen which effects melatonin
+                  production.
+                </li>
+                <li>
+                  Choose if you would like a Solfeggio Frequency tone in the
+                  background.
+                </li>
+                <li>
+                  The audio icon will only mute the gong tones which indicate
+                  inhales/exhales if you just want solfeggio frequencies or
+                  silence.
+                </li>
                 <li>Tapping the sphere will start the session.</li>
                 <li>Focus on breathing slowly and evenly.</li>
                 <li>
@@ -260,8 +223,8 @@
                 <li>Relax your body and stay present.</li>
                 <li>
                   Start with a few minutes, then extend gradually. The length of
-                  the audio is looped to be infinite, which can be "paused" or
-                  "reset".
+                  the audio is looped to be infinite, which can be "paused" by
+                  tapping the sphere or "reset" by tapping the reset text.
                 </li>
                 <li>
                   Remember to be patient with distractions, gently refocus on
@@ -276,31 +239,262 @@
           </div>
         </div>
       </div>
-      <div class="info-icon-container">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 50 50"
-          width="35px"
-          height="35px"
-          class="info-icon"
-        >
-          <path
-            d="M 25 2 C 12.309295 2 2 12.309295 2 25 C 2 37.690705 12.309295 48 25 48 C 37.690705 48 48 37.690705 48 25 C 48 12.309295 37.690705 2 25 2 z M 25 4 C 36.609824 4 46 13.390176 46 25 C 46 36.609824 36.609824 46 25 46 C 13.390176 46 4 36.609824 4 25 C 4 13.390176 13.390176 4 25 4 z M 25 11 A 3 3 0 0 0 22 14 A 3 3 0 0 0 25 17 A 3 3 0 0 0 28 14 A 3 3 0 0 0 25 11 z M 21 21 L 21 23 L 22 23 L 23 23 L 23 36 L 22 36 L 21 36 L 21 38 L 22 38 L 23 38 L 27 38 L 28 38 L 29 38 L 29 36 L 28 36 L 27 36 L 27 21 L 26 21 L 22 21 L 21 21 z"
-          />
-        </svg>
+      <div class="solfeggio-modal-container">
+        <div class="solfeggio-modal-content">
+          <div class="solfeggio-close-button"></div>
+          <div class="solfeggio-modal-logo-wrapper">
+            <img
+              src="/assets/logo/coherent_breathing_logo-transparent.png"
+              width="150"
+              height="150"
+            />
+          </div>
+          <div class="solfeggio-modal-paragraph-wrapper">
+            <section>
+              <p>
+                The Solfeggio frequencies are a set of tones believed to have
+                spiritual, emotional, and physical healing properties. They
+                originated from an ancient musical scale used in Gregorian
+                chants and were rediscovered in the 20th century.
+              </p>
+              <ul class="solfeggio-modal-list">
+                <li>
+                  <strong>174 Hz - Foundation:</strong> This frequency is
+                  associated with grounding, security, and a sense of stability.
+                  It is believed to help establish a strong foundation, both
+                  physically and emotionally, promoting a sense of safety and
+                  security.
+                </li>
+                <li>
+                  <strong>285 Hz - Quantum Cognition:</strong> This frequency is
+                  said to enhance cognition and perception, facilitating a
+                  deeper understanding and awareness of oneself and the world.
+                  It is associated with expanding consciousness and accessing
+                  higher states of awareness.
+                </li>
+                <li>
+                  <strong>396 Hz - Liberating Guilt and Fear:</strong> Often
+                  used for releasing feelings of guilt, fear, and other negative
+                  emotions. It is believed to help dissolve limiting beliefs and
+                  emotional blockages, promoting liberation and inner peace.
+                </li>
+                <li>
+                  <strong
+                    >417 Hz - Undoing Situations and Facilitating
+                    Change:</strong
+                  >
+                  This frequency is associated with facilitating change,
+                  breaking negative patterns, and undoing challenging
+                  situations. It is believed to support transformation and
+                  empowerment.
+                </li>
+                <li>
+                  <strong>
+                    528 Hz - Transformation and Miracles (DNA Repair):</strong
+                  >
+                  Known as the "Love Frequency," 528 Hz is associated with
+                  promoting healing, restoration, and transformation. It is
+                  believed to facilitate DNA repair, promote inner harmony, and
+                  evoke feelings of love and compassion.
+                </li>
+                <li>
+                  <strong>639 Hz - Connecting/Relationships:</strong> This
+                  frequency is associated with fostering harmonious
+                  relationships and enhancing communication. It is believed to
+                  promote empathy, understanding, and connection with oneself
+                  and others.
+                </li>
+                <li>
+                  <strong>741 Hz - Expression/Solutions:</strong> Often used for
+                  enhancing creativity, self-expression, and problem-solving
+                  abilities. It is believed to stimulate intuition, inspire
+                  creative solutions, and promote clear communication.
+                </li>
+                <li>
+                  <strong>852 Hz - Returning to Spiritual Order:</strong> This
+                  frequency is associated with reconnecting with one's spiritual
+                  essence and accessing inner wisdom. It is believed to promote
+                  spiritual growth, intuition, and a deep sense of inner peace.
+                </li>
+                <li>
+                  <strong>963 Hz - Transcendence:</strong> Considered a
+                  frequency of spiritual awakening and transcendence. It is
+                  believed to facilitate a deep connection with the divine,
+                  promote spiritual enlightenment, and enhance overall
+                  well-being.
+                </li>
+              </ul>
+            </section>
+          </div>
+          <div class="solfeggio-modal-button-wrapper">
+            <button class="solfeggio-modal-btn">close</button>
+          </div>
+        </div>
       </div>
-      <footer>
-        <p class="footer-text">
-          © 2024 |
-          <a
-            class="footer-link"
-            href="https://danlubbers.com "
-            target="_blank"
-            rel="noopener noreferrer"
-            >danlubbers.com</a
+      <div class="top-grid-container">
+        <div class="header-container">
+          <h1 class="header-title">Coherent Breathing</h1>
+          <section>
+            <div class="toggle-theme-container">
+              <input
+                id="toggle-theme"
+                class="toggle-theme-input"
+                type="checkbox"
+              />
+              <div class="theme-icon"></div>
+              <label for="toggle-theme" class="toggle-theme-label"
+                >Select</label
+              >
+            </div>
+          </section>
+        </div>
+      </div>
+      <div class="middle-grid-container">
+        <div class="sphere-container">
+          <figure class="sphere" data-state="stop">
+            <figcaption class="caption" />
+          </figure>
+          <audio
+            loop
+            id="gong"
+            src="https://s3.amazonaws.com/content.danlubbers.com/audio/coherent_breathing_45min.mp3"
+            preload="auto"
           >
-        </p>
-      </footer>
+            Your browser does not support the <code>audio</code> element.
+          </audio>
+          <audio
+            loop
+            id="one-seventy-four-hz-audio"
+            src="https://s3.amazonaws.com/content.danlubbers.com/audio/174hz_15min_decrease_vol_25.mp3"
+            preload="auto"
+          >
+            Your browser does not support the <code>audio</code> element.
+          </audio>
+          <audio
+            loop
+            id="two-eighty-five-hz-audio"
+            src="https://s3.amazonaws.com/content.danlubbers.com/audio/285hz_15min_decrease_vol_25.mp3"
+            preload="auto"
+          >
+            Your browser does not support the <code>audio</code> element.
+          </audio>
+          <audio
+            loop
+            id="three-ninety-six-hz-audio"
+            src="https://s3.amazonaws.com/content.danlubbers.com/audio/396hz_15min_decrease_vol_25.mp3"
+            preload="auto"
+          >
+            Your browser does not support the <code>audio</code> element.
+          </audio>
+          <audio
+            loop
+            id="four-seventeen-hz-audio"
+            src="https://s3.amazonaws.com/content.danlubbers.com/audio/417hz_15min_decrease_vol_25.mp3"
+            preload="auto"
+          >
+            Your browser does not support the <code>audio</code> element.
+          </audio>
+          <audio
+            loop
+            id="five-twenty-eight-hz-audio"
+            src="https://s3.amazonaws.com/content.danlubbers.com/audio/528hz_15min_decrease_vol_25.mp3"
+            preload="auto"
+          >
+            Your browser does not support the <code>audio</code> element.
+          </audio>
+          <audio
+            loop
+            id="six-thirty-nine-hz-audio"
+            src="https://s3.amazonaws.com/content.danlubbers.com/audio/639hz_15min_decrease_vol_25.mp3"
+            preload="auto"
+          >
+            Your browser does not support the <code>audio</code> element.
+          </audio>
+          <audio
+            loop
+            id="seven-forty-one-hz-audio"
+            src="https://s3.amazonaws.com/content.danlubbers.com/audio/741hz_15min_decrease_vol_25.mp3"
+            preload="auto"
+          >
+            Your browser does not support the <code>audio</code> element.
+          </audio>
+          <audio
+            loop
+            id="eight-fifty-two-hz-audio"
+            src="https://s3.amazonaws.com/content.danlubbers.com/audio/852hz_15min_decrease_vol_25.mp3"
+            preload="auto"
+          >
+            Your browser does not support the <code>audio</code> element.
+          </audio>
+          <audio
+            loop
+            id="nine-sixty-three-hz-audio"
+            src="https://s3.amazonaws.com/content.danlubbers.com/audio/963hz_15min_decrease_vol_25.mp3"
+            preload="auto"
+          >
+            Your browser does not support the <code>audio</code> element.
+          </audio>
+        </div>
+      </div>
+      <div class="bottom-grid-container">
+        <div class="solfeggio-container">
+          <p class="solfeggio-title">Solfeggio Frequency</p>
+          <label for="solfeggio-dropdown"></label>
+          <select name="solfeggio-dropdown" id="solfeggio-dropdown">
+            <option value="">none</option>
+            <option value="174hz">174hz</option>
+            <option value="285hz">285hz</option>
+            <option value="396hz">396hz</option>
+            <option value="417hz">417hz</option>
+            <option value="528hz">528hz</option>
+            <option value="639hz">639hz</option>
+            <option value="741hz">741hz</option>
+            <option value="852hz">852hz</option>
+            <option value="963hz">963hz</option>
+          </select>
+        </div>
+        <div class="controls-container">
+          <section>
+            <div class="toggle-audio-container">
+              <input
+                id="toggle-audio"
+                class="toggle-audio-input"
+                type="checkbox"
+              />
+              <div class="audio-icon"></div>
+              <label for="toggle-audio" class="toggle-audio-label"
+                >Select</label
+              >
+            </div>
+          </section>
+          <button class="reset-btn">Reset</button>
+        </div>
+        <div class="info-icon-container">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 50 50"
+            width="35px"
+            height="35px"
+            class="info-icon"
+          >
+            <path
+              d="M 25 2 C 12.309295 2 2 12.309295 2 25 C 2 37.690705 12.309295 48 25 48 C 37.690705 48 48 37.690705 48 25 C 48 12.309295 37.690705 2 25 2 z M 25 4 C 36.609824 4 46 13.390176 46 25 C 46 36.609824 36.609824 46 25 46 C 13.390176 46 4 36.609824 4 25 C 4 13.390176 13.390176 4 25 4 z M 25 11 A 3 3 0 0 0 22 14 A 3 3 0 0 0 25 17 A 3 3 0 0 0 28 14 A 3 3 0 0 0 25 11 z M 21 21 L 21 23 L 22 23 L 23 23 L 23 36 L 22 36 L 21 36 L 21 38 L 22 38 L 23 38 L 27 38 L 28 38 L 29 38 L 29 36 L 28 36 L 27 36 L 27 21 L 26 21 L 22 21 L 21 21 z"
+            />
+          </svg>
+        </div>
+        <footer>
+          <p class="footer-text">
+            © 2024 |
+            <a
+              class="footer-link"
+              href="https://danlubbers.com "
+              target="_blank"
+              rel="noopener noreferrer"
+              >danlubbers.com</a
+            >
+          </p>
+        </footer>
+      </div>
     </main>
 
     <script type="module" src="/isIOS.js"></script>
