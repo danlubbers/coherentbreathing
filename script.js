@@ -19,11 +19,7 @@ const pwaModalBtn = document.querySelector(".pwa-modal-btn");
 const infoModalContainer = document.querySelector(".info-modal-container");
 const infoXBtn = document.querySelector(".info-close-button");
 const infoModalBtn = document.querySelector(".info-modal-btn");
-const solfeggioModalContainer = document.querySelector(
-  ".solfeggio-modal-container"
-);
-const solfeggioXBtn = document.querySelector(".solfeggio-close-button");
-const solfeggioModalBtn = document.querySelector(".solfeggio-modal-btn");
+
 const headerTitle = document.querySelector(".header-title");
 const toggleThemeContainer = document.querySelector(".toggle-theme-container");
 const toggleThemeInput = document.querySelector(".toggle-theme-input");
@@ -32,35 +28,8 @@ const sphere = document.querySelector(".sphere");
 const caption = document.querySelector(".caption");
 const gong = document.querySelector("#gong");
 const controlsContainer = document.querySelector(".controls-container");
-const oneSeventyFourHZAudio = document.querySelector(
-  "#one-seventy-four-hz-audio"
-);
-const twoEightyFiveHZAudio = document.querySelector(
-  "#two-eighty-five-hz-audio"
-);
-const threeNinetySixHZAudio = document.querySelector(
-  "#three-ninety-six-hz-audio"
-);
-const fourSeventeenHZAudio = document.querySelector("#four-seventeen-hz-audio");
-const fiveTwentyEightHZAudio = document.querySelector(
-  "#five-twenty-eight-hz-audio"
-);
-const sixThirtyNineHZAudio = document.querySelector(
-  "#six-thirty-nine-hz-audio"
-);
-const seventFortyOneHZAudio = document.querySelector(
-  "#seven-forty-one-hz-audio"
-);
-const eightFiftyTwoHZAudio = document.querySelector(
-  "#eight-fifty-two-hz-audio"
-);
-const nineSixtyThreeHZAudio = document.querySelector(
-  "#nine-sixty-three-hz-audio"
-);
+
 const audio = document.querySelector("audio");
-const solfeggioContainer = document.querySelector(".solfeggio-container");
-const solfeggioTitle = document.querySelector(".solfeggio-title");
-const solfeggioDropdownMenu = document.querySelector("#solfeggio-dropdown");
 const audioInput = document.querySelector(".toggle-audio-input");
 const audioIcon = document.querySelector(".audio-icon");
 const resetBtn = document.querySelector(".reset-btn");
@@ -69,7 +38,6 @@ const infoIcon = document.querySelector(".info-icon");
 const footerContainer = document.querySelector("footer");
 const footerText = document.querySelector(".footer-text");
 const footerLink = document.querySelector(".footer-link");
-let solfeggioFrequency = "";
 
 if (prompt) {
   // Show modal based on IOS and time
@@ -86,14 +54,6 @@ const resetAnimationAndAudio = () => {
   sphere.style.animation = "paused"; // resets animation
   caption.style.setProperty("--animation-name", "paused"); // resets pseud-element animation
 
-  // RESET solfeggio to "none"
-
-  // Will need to convert to switch statement and put in separate function for all frequencies
-  if (solfeggioFrequency) {
-    fiveTwentyEightHZAudio.pause();
-    fiveTwentyEightHZAudio.currentTime = 0;
-  }
-
   gong.pause();
   gong.currentTime = 0; // reset audio to beginning
 };
@@ -109,8 +69,6 @@ toggleThemeInput.addEventListener("click", () => {
       `radial-gradient(circle, ${nightmodeSphereForegroundColor}, ${nightmodeSphereBackgroundColor})`
     );
     caption.style.color = nightmodeForegroundColor;
-    solfeggioTitle.style.color = nightmodeForegroundColor;
-    solfeggioDropdownMenu.style.color = nightmodeForegroundColor;
     audioIcon.style.backgroundColor = nightmodeForegroundColor;
     resetBtn.style.color = nightmodeForegroundColor;
     infoIcon.style.fill = nightmodeForegroundColor;
@@ -128,8 +86,6 @@ toggleThemeInput.addEventListener("click", () => {
       `radial-gradient(circle, ${sphereForegroundColor}, ${sphereBackgroundColor})`
     );
     caption.style.color = foregroundColor;
-    solfeggioTitle.style.color = foregroundColor;
-    solfeggioDropdownMenu.style.color = foregroundColor;
     audioIcon.style.backgroundColor = foregroundColor;
     resetBtn.style.color = foregroundColor;
     infoIcon.style.fill = foregroundColor;
@@ -143,7 +99,6 @@ sphere.addEventListener("click", () => {
   if (sphere.dataset.state === "stop") {
     headerContainer.setAttribute("style", "visibility: hidden");
     themeIcon.setAttribute("style", "opacity: 0"); // fixes lag in transition animation
-    solfeggioContainer.setAttribute("style", "visibility: hidden");
     controlsContainer.setAttribute("style", "visibility: hidden");
     infoContainer.setAttribute("style", "visibility: hidden");
     audioIcon.setAttribute("style", "opacity: 0"); // fixes lag in transition animation
@@ -153,42 +108,9 @@ sphere.addEventListener("click", () => {
     caption.style.setProperty("--animation-name", "sphere-caption");
     caption.style.setProperty("--animation", "running");
     gong.play();
-
-    switch (solfeggioFrequency) {
-      case "174hz":
-        oneSeventyFourHZAudio.play();
-        break;
-      case "285hz":
-        twoEightyFiveHZAudio.play();
-        break;
-      case "396hz":
-        threeNinetySixHZAudio.play();
-        break;
-      case "417hz":
-        fourSeventeenHZAudio.play();
-        break;
-      case "528hz":
-        fiveTwentyEightHZAudio.play();
-        break;
-      case "639hz":
-        sixThirtyNineHZAudio.play();
-        break;
-      case "741hz":
-        seventFortyOneHZAudio.play();
-        break;
-      case "852hz":
-        eightFiftyTwoHZAudio.play();
-        break;
-      case "963hz":
-        nineSixtyThreeHZAudio.play();
-        break;
-      default:
-        return "";
-    }
   } else if (sphere.dataset.state === "play") {
     headerContainer.setAttribute("style", "visibility: visible");
     themeIcon.setAttribute("style", "opacity: 1");
-    solfeggioContainer.setAttribute("style", "visibility: visible");
     controlsContainer.setAttribute("style", "visibility: visible");
     infoContainer.setAttribute("style", "visibility: visible");
     audioIcon.setAttribute("style", "opacity: 1");
@@ -197,55 +119,7 @@ sphere.addEventListener("click", () => {
     sphere.style.animationPlayState = "paused";
     caption.style.setProperty("--animation", "paused");
     gong.pause();
-
-    switch (solfeggioFrequency) {
-      case "174hz":
-        oneSeventyFourHZAudio.pause();
-        break;
-      case "285hz":
-        twoEightyFiveHZAudio.pause();
-        break;
-      case "396hz":
-        threeNinetySixHZAudio.pause();
-        break;
-      case "417hz":
-        fourSeventeenHZAudio.pause();
-        break;
-      case "528hz":
-        fiveTwentyEightHZAudio.pause();
-        break;
-      case "639hz":
-        sixThirtyNineHZAudio.pause();
-        break;
-      case "741hz":
-        seventFortyOneHZAudio.pause();
-        break;
-      case "852hz":
-        eightFiftyTwoHZAudio.pause();
-        break;
-      case "963hz":
-        nineSixtyThreeHZAudio.pause();
-        break;
-      default:
-        return "";
-    }
   }
-});
-
-solfeggioTitle.addEventListener("click", () => {
-  solfeggioModalContainer.style.display = "flex";
-});
-
-solfeggioXBtn.addEventListener("click", () => {
-  solfeggioModalContainer.style.display = "none";
-});
-
-solfeggioModalBtn.addEventListener("click", () => {
-  solfeggioModalContainer.style.display = "none";
-});
-
-solfeggioDropdownMenu.addEventListener("change", () => {
-  solfeggioFrequency = solfeggioDropdownMenu.value;
 });
 
 audioInput.addEventListener("click", () => {
